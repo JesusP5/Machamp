@@ -1,16 +1,28 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, ActivityIndicator, StyleSheet, Image, Text} from 'react-native';
 
-function LoadingApp({ navigation }) {
-  return (
-    <View>
-      <Text>LOADING...</Text>
-      <Button
-        title="Go to Screen B"
-        onPress={() => navigation.navigate('Welcome')}
-      />
-    </View>
-  );
+export default function LoadingApp() {
+    return (
+        <View style={styles.container}>
+            <Image source={require('../assets/LogoPamet.png')} style={styles.imageLogo}/>
+            <Text style={styles.textLogo}>PAMET</Text>
+            <ActivityIndicator size="large" color="#00B1FE" />
+        </View>
+    );
 }
 
-export default LoadingApp;
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    imageLogo: {
+        width: 100,
+        height: 100,
+    },
+    textLogo: {
+        fontSize: 30,
+        fontWeight: 'bold',
+    },
+});
