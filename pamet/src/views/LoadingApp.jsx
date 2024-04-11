@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { View, ActivityIndicator, StyleSheet, Image, Text} from 'react-native';
 
-export default function LoadingApp(navigation) {
+export default function LoadingApp({navigation}) {
     useEffect(() => {
         // Cambiar a la pantalla principal después de 2 segundos
         const timer = setTimeout(() => {
-          navigation.replace('MainScreen'); // Utiliza 'navigate' si prefieres permitir volver a la pantalla de carga
+          navigation.replace('Welcome'); // Utiliza 'navigate' si prefieres permitir volver a la pantalla de carga
         }, 2000); // Ajusta el tiempo según necesites
     
         return () => clearTimeout(timer); // Limpieza al desmontar
