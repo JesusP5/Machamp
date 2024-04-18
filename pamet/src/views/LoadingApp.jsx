@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, ActivityIndicator, StyleSheet, Image, Text} from 'react-native';
+import { View, ActivityIndicator, StyleSheet, Image, Text, SafeAreaView} from 'react-native';
 
 export default function LoadingApp({navigation}) {
     useEffect(() => {
@@ -13,11 +13,11 @@ export default function LoadingApp({navigation}) {
     
 
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <Image source={require('../assets/LogoPamet.png')} style={styles.imageLogo}/>
             <Text style={styles.textLogo}>PAMET</Text>
             <ActivityIndicator size="large" color="#00B1FE" />
-        </View>
+        </SafeAreaView>
     );
 }
 
