@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, TextInput, Text} from 'react-native';
+import styles from '../assets/styles';
 
 export default function GenericInput({children, label, style, ...props}) {
   return (
