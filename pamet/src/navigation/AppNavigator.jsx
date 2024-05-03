@@ -1,8 +1,8 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 import LoadingApp from '../views/LoadingApp';
 import Welcome from '../views/Welcome';
+import Login from '../views/Login';
 const Stack = createNativeStackNavigator();
 
 function AppNavigator() {
@@ -14,6 +14,7 @@ function AppNavigator() {
           }}>
           <Stack.Screen name="LoadingApp" component={LoadingApp} />
           <Stack.Screen name="Welcome" component={Welcome} />
+          <Stack.Screen name='Login' component={Login} />
         </Stack.Navigator>
  
   );
