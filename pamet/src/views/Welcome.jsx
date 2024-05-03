@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, SafeAreaView, StyleSheet, Image } from 'react-native';
+import { View, Text, SafeAreaView, StyleSheet, Image, Alert } from 'react-native';
 import ButtonGenericBlue from '../components/ButtonGenericBlue';
 import ButtonGenericWhite from '../components/ButtonGenericWhite';
 import color from '../assets/Colors';
@@ -17,15 +17,6 @@ function Welcome({ navigation }) {
       <ButtonGenericBlue title="Log in with your account" onPress={handlePress} backgroundColor={'white'} />
       <Text style={styles.textQuestion}>¿No tienes una cuenta?</Text>
       <ButtonGenericWhite title="Sign Up" onPress={handlePress} backgroundColor={color.primary} color={'white'} />
-      <Card
-        HospitalName="Centro médico COSCAMI"
-        HospitalId="3D6J09"
-        HospitalAddress="Av Río Moctezuma 176, San Cayetano, 76807 San Juan del Río, Qro."
-        HospitalPhone="427 274 1481"
-        Doctor="Dr. Alonso Gutierrez Jimenez"
-        GroupSize="192"
-        HospitalPicture={require('../assets/img/HospitalPicture.png')}
-      />
     </SafeAreaView>
   );
 }
