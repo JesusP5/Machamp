@@ -1,12 +1,15 @@
 import React from 'react';
-import { View, Text, SafeAreaView, StyleSheet, Image, Alert } from 'react-native';
-import ButtonGenericBlue from '../components/ButtonGenericBlue';
-import ButtonGenericWhite from '../components/ButtonGenericWhite';
+import { View, Text, Button, SafeAreaView, StyleSheet, Image } from 'react-native';
+import ButtonGenericBlue from '../components/ButtonGenericWhite';
+import ButtonGenericWhite from '../components/ButtonGenericBlue';
 import color from '../assets/Colors';
-import Card from '../components/InstituitionCard';
+
 function Welcome({ navigation }) {
-  const handlePress = () => {
-    console.log('Bien')
+  const Login = () => {
+    navigation.navigate('Login');
+  }
+  const SignUp = () => {
+    navigation.navigate('SignUp');
   }
   return (
     <SafeAreaView style={styles.safearea}>
@@ -14,9 +17,9 @@ function Welcome({ navigation }) {
       <Text style={[{fontWeight: 'bold', fontSize: 24}]}>¡Bienvenido a PAMET!</Text>
       <Text style={styles.textIntro}>La mejor aplicacion para llevar tu registro medico desde un solo lugar. Sientete seguro de tener tus datos con nosotros y deja que nos encargemos 
         con las situaciones medicas.</Text>
-      <ButtonGenericBlue title="Log in with your account" onPress={handlePress} backgroundColor={'white'} />
+      <ButtonGenericBlue title="Log in with your account" onPress={Login} backgroundColor={'white'} />
       <Text style={styles.textQuestion}>¿No tienes una cuenta?</Text>
-      <ButtonGenericWhite title="Sign Up" onPress={handlePress} backgroundColor={color.primary} color={'white'} />
+      <ButtonGenericWhite title="Sign Up" onPress={SignUp} backgroundColor={color.primary} color={'white'} />
     </SafeAreaView>
   );
 }

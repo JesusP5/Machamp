@@ -12,18 +12,19 @@ const ButtonGeneric = ({title, onPress}) => {
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: 'white',
         padding: 20,
         borderRadius: 30,
         alignItems: 'center',
         justifyContent: 'center',
         borderWidth: 1,
-        borderColor: color.primary
+        borderColor: color.primary,
+        backgroundColor: color.primary,
+        width: '60%',
     },
     buttonText: {
-        color: color.primary,
+        color: 'white',
         fontSize: 16,
-        fontWeight: 'normal',
+        fontWeight: 'bold',
     },
 });
 
