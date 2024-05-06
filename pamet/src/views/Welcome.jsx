@@ -4,7 +4,6 @@ import ButtonGenericBlue from '../components/ButtonGenericWhite';
 import ButtonGenericWhite from '../components/ButtonGenericBlue';
 import color from '../assets/Colors';
 
-
 function Welcome({ navigation }) {
   const Login = () => {
     navigation.navigate('Login');
