@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet, Image } from 'react-native';
-import ButtonGenericBlue from '../components/ButtonGenericWhite';
-import ButtonGenericWhite from '../components/ButtonGenericBlue';
+import ButtonGenericBlue from '../components/ButtonGenericBlue';
+import ButtonGenericWhite from '../components/ButtonGenericWhite';
 import { SafeAreaView } from "react-native-safe-area-context";
 import color from '../assets/Colors';
 

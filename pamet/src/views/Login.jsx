@@ -2,7 +2,8 @@ import React from "react";
 import { ScrollView, Button, Text, StyleSheet, Image , View} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import GenericInput from "../components/GenericInput";
-import ButtonGenericBlue from "../components/ButtonGenericBlue";
+import ButtonGenericWhite from "../components/ButtonGenericWhite";
+import color from '../assets/Colors';
 
 function Login({ navigation }) {
   const handlePress = () => {
@@ -17,7 +18,7 @@ function Login({ navigation }) {
       <Image source={require("../assets/LogoPamet.png")} style={styles.logo} />
       <GenericInput label="Username" placeholder="Username" />
       <GenericInput label="Password" placeholder="Password" secureTextEntry />
-      <ButtonGenericBlue title="Log in" onPress={handlePress} />
+      <ButtonGenericWhite title="Log in" onPress={handlePress} backgroundColor={color.primary}/>
       <Text style={styles.textQuestion}>¿No tienes una cuenta?</Text><Button title="Sign Up" onPress={handlePress} />
       
     </SafeAreaView>
