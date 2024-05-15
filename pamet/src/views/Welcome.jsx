@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, Button, SafeAreaView, StyleSheet, Image } from 'react-native';
+import { View, Text, Button, StyleSheet, Image } from 'react-native';
 import ButtonGenericBlue from '../components/ButtonGenericWhite';
 import ButtonGenericWhite from '../components/ButtonGenericBlue';
+import { SafeAreaView } from "react-native-safe-area-context";
 import color from '../assets/Colors';
 
 function Welcome({ navigation }) {

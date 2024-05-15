@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoadingApp from "../views/LoadingApp";
 import Welcome from "../views/Welcome";
 import Login from "../views/Login";
-import Register from "../views/Register";
+import SignUp from "../views/SignUp";
 const Stack = createNativeStackNavigator();
 
 function AppNavigator() {
@@ -14,7 +14,6 @@ function AppNavigator() {
       }}
     >
       <Stack.Screen name="LoadingApp" component={LoadingApp} />
-      
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="Login" component={Login} />
     </Stack.Navigator>

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { View, ActivityIndicator, StyleSheet, Image, Text, SafeAreaView} from 'react-native';
+import { View, ActivityIndicator, StyleSheet, Image, Text} from 'react-native';
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function LoadingApp({navigation}) {
     useEffect(() => {
