@@ -13,8 +13,7 @@ function AppNavigator() {
         headerShown: false,
       }}
     >
-      <Stack.Screen name="SignUp" component={SignUp} />
-      {<Stack.Screen name="LoadingApp" component={LoadingApp} />}
+      <Stack.Screen name="LoadingApp" component={LoadingApp} />
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="Login" component={Login} />
     </Stack.Navigator>
