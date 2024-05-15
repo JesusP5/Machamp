@@ -16,6 +16,7 @@ function AppNavigator() {
       <Stack.Screen name="LoadingApp" component={LoadingApp} />
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="SignUp" component={SignUp} />
     </Stack.Navigator>
   );
 }
