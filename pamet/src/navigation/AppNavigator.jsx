@@ -13,8 +13,8 @@ function AppNavigator() {
         headerShown: false,
       }}
     >
-      <Stack.Screen name="Register" component={Register} />
-      {<Stack.Screen name="LoadingApp" component={LoadingApp} />}
+      <Stack.Screen name="LoadingApp" component={LoadingApp} />
+      
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="Login" component={Login} />
     </Stack.Navigator>
