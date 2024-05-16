@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderWidth: 1,
-        borderColor: color.primary
+        borderColor: color.primary,
+        width: '100%',
     },
     buttonText: {
         color: color.primary,

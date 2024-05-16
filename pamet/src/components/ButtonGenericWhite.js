@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: color.primary,
         backgroundColor: color.primary,
-        width: '60%',
+        width: '100%',
     },
     buttonText: {
         color: 'white',
