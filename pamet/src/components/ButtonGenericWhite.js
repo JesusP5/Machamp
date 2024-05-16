@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import color from '../assets/Colors';
 
-const ButtonGenericBlue = ({title, onPress}) => {
+const ButtonGeneric = ({title, onPress}) => {
     return (
         <TouchableOpacity style={styles.button} onPress={onPress}>
             <Text style={styles.buttonText}>{title}</Text>
@@ -12,19 +12,20 @@ const ButtonGenericBlue = ({title, onPress}) => {
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: 'white',
         padding: 20,
         borderRadius: 30,
         alignItems: 'center',
         justifyContent: 'center',
         borderWidth: 1,
-        borderColor: color.primary
+        borderColor: color.primary,
+        backgroundColor: color.primary,
+        width: '60%',
     },
     buttonText: {
-        color: color.primary,
+        color: 'white',
         fontSize: 16,
-        fontWeight: 'normal',
+        fontWeight: 'bold',
     },
 });
 
-export default ButtonGenericBlue;
+export default ButtonGeneric;

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TextInput, Button, StyleSheet, StatusBar, Image} from "react-native";
+import { View, Text, TextInput, Button, StyleSheet, Image} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function SignUp() {
@@ -12,7 +12,6 @@ export default function SignUp() {
         <Text style={styles.title}>Select your born date</Text>
 
         <Button title="Register"/>
-        <StatusBar style="auto" />
         </SafeAreaView>
     );
     }
