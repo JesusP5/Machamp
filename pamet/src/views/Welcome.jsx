@@ -46,7 +46,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 60,
     width: '85%',
-    textAlign: 'center'
+    color: '#2e2e2e',
+    textAlign: 'center',
+    fontWeight: 'light'
     
   },
   textQuestion: {
