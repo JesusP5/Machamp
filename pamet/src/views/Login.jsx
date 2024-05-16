@@ -1,10 +1,10 @@
 import React from "react";
-import { ScrollView, Button, Text, StyleSheet, Image , View} from "react-native";
+import { Text, StyleSheet, Image, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import GenericInput from "../components/GenericInput";
 import ButtonGenericWhite from "../components/ButtonGenericWhite";
-import color from '../assets/Colors';
-import PatientCard from "../components/PatientCard";
+import color from "../assets/Colors";
+
 
 function Login({ navigation }) {
   const handlePress = () => {
@@ -15,13 +15,24 @@ function Login({ navigation }) {
   };
   return (
     <SafeAreaView style={styles.container}>
-
-      <Image source={require('../assets/ImageTopU.png')} style={styles.background} />
       <Image source={require("../assets/LogoPamet.png")} style={styles.logo} />
-      <GenericInput label="Username" placeholder="Username" />
-      <GenericInput label="Password" placeholder="Password" secureTextEntry />
-      <ButtonGenericWhite title="Log in" onPress={handlePress} backgroundColor={color.primary}/>
-      <Text style={styles.textQuestion}>¿No tienes una cuenta?</Text><Button title="Sign Up" onPress={handlePress} />
+      <GenericInput placeholder="Correo Electronico" />
+      <GenericInput placeholder="Contraseña" />
+      <View style={{ flexDirection: "row", marginTop: 25, width:'50%' }}>
+      <ButtonGenericWhite
+        title="Iniciar Sesion"
+        onPress={handlePress}
+        backgroundColor={color.primary}
+        style={{ marginTop: 50 }}
+      />
+      </View>
+      <Text style={styles.textQuestion}>
+        ¿No tienes una cuenta?
+        <Text onPress={SignUp} style={styles.SignUp}>
+          {" "}
+          Registrarse
+        </Text>
+      </Text>
     </SafeAreaView>
   );
 }
@@ -30,29 +41,25 @@ styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     textAlign: "center",
-  },
-  background: {
-    position: "absolute",
-    width: 530,
-    height: 500,
-    resizeMode: "cover",
-    opacity: 1,
-    borderRadius: 600 / 2,
-    top: -280,
+    marginTop: 50,
+    backgroundColor: "white",
   },
   textQuestion: {
     marginTop: 20,
     fontSize: 16,
-    marginBottom: 5,
     width: "80%",
     textAlign: "center",
     fontWeight: "bold",
   },
-  logo:{
+  logo: {
     marginTop: 30,
     width: 235,
     height: 232,
+  },
+  SignUp: {
+    color: color.primary,
+    fontSize: 16,
+    fontWeight: "normal",
   }
-
 });
 export default Login;
