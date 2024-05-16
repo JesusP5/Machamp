@@ -4,7 +4,7 @@ import ButtonGenericBlue from '../components/ButtonGenericBlue';
 import ButtonGenericWhite from '../components/ButtonGenericWhite';
 import { SafeAreaView } from "react-native-safe-area-context";
 import color from '../assets/Colors';
-
+import PatientCard from '../components/PatientCard';
 function Welcome({ navigation }) {
   const Login = () => {
     navigation.navigate('Login');
@@ -27,6 +27,7 @@ function Welcome({ navigation }) {
 
 const styles = StyleSheet.create({
   safearea: {
+    padding: 40,
     flex: 1, 
     alignItems: 'center',
     textAlign: 'center'
