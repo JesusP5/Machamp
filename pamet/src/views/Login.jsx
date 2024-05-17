@@ -9,10 +9,11 @@ import color from "../assets/Colors";
 function Login({ navigation }) {
   const handlePress = () => {
     console.log("Bien");
-    navigation.navigate("QRCode");
+    navigation.navigate("PersonaQR");
   };
   const SignUp = () => {
     navigation.navigate("SignUp");
+
   }; 
   return (
     <SafeAreaView style={styles.container}>
@@ -41,7 +42,7 @@ function Login({ navigation }) {
     </SafeAreaView>
   );
 }
-styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
