@@ -1,38 +1,40 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { FontAwesome, Entypo } from '@expo/vector-icons';
-import { Octicons } from '@expo/vector-icons'; 
+import { AntDesign } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 
-export default function Header({onBack, onSetting}) {
+export default function NavBar({navigation}) {
+
     return (
-        <View style={styles.header}>
+        <View style={styles.navbar}>
             <View style={styles.buttonContainer}>
-                <TouchableOpacity style={styles.button} onPress={onBack}>
-                    <Entypo name="chevron-left" size={25} color="black" />
+                <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('QRCode')}>
+                    <AntDesign name="qrcode" size={25}/>
                 </TouchableOpacity>
             </View>
-            <Text style={styles.headerText}>PAMET</Text>
+            <View>
+                <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Patient')}>
+                    <FontAwesome5 name="user" size={25}/>
+                </TouchableOpacity>
+            </View>
             <View style={styles.buttonContainer}>
-                <TouchableOpacity style={styles.button} onPress={onSetting}>
-                    <FontAwesome name="cog" size={25} color="black" />
+                <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('ScanQRCode')}>
+                    <Feather name="camera" size={25} />
                 </TouchableOpacity>
             </View>
         </View>
     );
 }
-
 const styles = StyleSheet.create({
-
-    header: {
+    navbar: {
         width: '100%',
-        height: 60,
+        height: 90,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: '#FFF',
         paddingHorizontal: 20,
-        borderBottomColor: '#F0F0F0',
-        borderBottomWidth: 1,
         shadowColor: '#000',
         shadowOffset: {
             width: 0,
@@ -41,12 +43,13 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 10,
         elevation: 5,
+        borderTopColor: '#F0F0F0',
+        borderTopWidth: 1,
     },
     buttonContainer: {
         width: 40,
         height: 40,
         borderRadius: 20,
-        backgroundColor: '#F0F0F0',
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -55,10 +58,5 @@ const styles = StyleSheet.create({
         height: 38,
         justifyContent: 'center',
         alignItems: 'center',
-    },
-    headerText: {
-        fontSize: 20,
-        fontWeight: 'normal',
-        textAlign: 'center',
     },
 });
