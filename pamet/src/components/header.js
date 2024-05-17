@@ -4,7 +4,6 @@ import { FontAwesome, Entypo } from '@expo/vector-icons';
 
 export default function Header({onBack, onSetting}) {
     return (
-        <View style={styles.shadow}>
             <View style={styles.header}>
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity style={styles.button} onPress={onBack}>
@@ -18,22 +17,11 @@ export default function Header({onBack, onSetting}) {
                     </TouchableOpacity>
                 </View>
             </View>
-        </View>
     );
 }
 
 const styles = StyleSheet.create({
-    shadow: {
-        padding: 10,
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: -5,
-        },
-        shadowOpacity: 0.1,
-        shadowRadius: 10,
-        elevation: 5,
-    },
+
     header: {
         width: '100%',
         height: 60,
@@ -42,6 +30,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#FFF',
         paddingHorizontal: 20,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: -5,
+        },
+        shadowOpacity: 0.1,
+        shadowRadius: 10,
+        elevation: 5,
     },
     buttonContainer: {
         width: 40,
