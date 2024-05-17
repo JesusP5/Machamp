@@ -1,22 +1,23 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { FontAwesome, Entypo } from '@expo/vector-icons';
+import { Octicons } from '@expo/vector-icons'; 
 
 export default function Header({onBack, onSetting}) {
     return (
-            <View style={styles.header}>
-                <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.button} onPress={onBack}>
-                        <Entypo name="chevron-left" size={28} color="black" />
-                    </TouchableOpacity>
-                </View>
-                <Text style={styles.headerText}>PAMET</Text>
-                <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.button} onPress={onSetting}>
-                        <FontAwesome name="cog" size={24} color="black" />
-                    </TouchableOpacity>
-                </View>
+        <View style={styles.header}>
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.button} onPress={onBack}>
+                    <Entypo name="chevron-left" size={28} color="black" />
+                </TouchableOpacity>
             </View>
+            <Text style={styles.headerText}>PAMET</Text>
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.button} onPress={onSetting}>
+                    <FontAwesome name="cog" size={24} color="black" />
+                </TouchableOpacity>
+            </View>
+        </View>
     );
 }
 
