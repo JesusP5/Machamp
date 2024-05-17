@@ -23,7 +23,7 @@ function Welcome({ navigation }) {
       <Text style={styles.textIntro}>La mejor aplicacion para llevar tu registro medico desde un solo lugar. Sientete seguro de tener tus datos con nosotros y deja que nos encargemos 
         con las situaciones medicas.</Text>
       <View style={{width:'70%'}}>
-      <ButtonGenericBlue title="Iniciar Sesion con tu cuenta" onPress={Login} backgroundColor={'white'} />
+      <ButtonGenericBlue title="Iniciar Sesion" onPress={Login} backgroundColor={'white'} />
       </View>
       <Text style={styles.textQuestion}>¿No tienes una cuenta?</Text>
       <View style={{width:'70%'}}>

@@ -8,6 +8,7 @@ import EditProfile from "../views/EditProfile";
 import QRCode from "../views/QRCode";
 import Patient from "../views/Patient";
 import ScanQRCode from "../views/ScanQRCode";
+import PersonaQR from "../views/PersonaQR";
 
 const Stack = createNativeStackNavigator();
 

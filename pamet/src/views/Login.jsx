@@ -9,7 +9,7 @@ import Header from "../components/header";
 function Login({ navigation }) {
   const handlePress = () => {
     console.log("Bien");
-    navigation.navigate("Patient");
+    navigation.navigate("PersonalQR")
   };
   const SignUp = () => {
     navigation.navigate("SignUp");
@@ -17,8 +17,12 @@ function Login({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <Image source={require("../assets/LogoPamet.png")} style={styles.logo} />
+      <View style={{ width:'65%' }}>
       <GenericInput placeholder="Correo Electronico" />
+      </View>
+      <View style={{ width:'65%' }}>
       <GenericInput placeholder="Contraseña" />
+      </View>
       <View style={{ flexDirection: "row", marginTop: 25, width:'50%' }}>
       <ButtonGenericWhite
         title="Iniciar Sesion"
@@ -42,7 +46,7 @@ styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     textAlign: "center",
-    marginTop: 50,
+    marginTop: 45,
     backgroundColor: "white",
   },
   textQuestion: {
