@@ -8,7 +8,7 @@ import color from "../assets/Colors";
 
 function Login({ navigation }) {
   const handlePress = () => {
-    console.log("Bien");
+    navigation.navigate("PersonalQR");
   };
   const SignUp = () => {
     navigation.navigate("SignUp");
