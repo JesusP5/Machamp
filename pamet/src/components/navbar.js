@@ -8,11 +8,6 @@ export default function NavBar({navigation}) {
 
     return (
         <View style={styles.navbar}>
-            <View style={styles.buttonContainer}>
-                <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('QRCode')}>
-                    <AntDesign name="qrcode" size={25}/>
-                </TouchableOpacity>
-            </View>
             <View>
                 <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Patient')}>
                     <FontAwesome5 name="user" size={25}/>
@@ -31,7 +26,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 90,
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around', // Modificado aquí
         alignItems: 'center',
         backgroundColor: '#FFF',
         paddingHorizontal: 20,
