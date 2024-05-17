@@ -5,7 +5,6 @@ import Welcome from "../views/Welcome";
 import Login from "../views/Login";
 import SignUp from "../views/SignUp";
 import EditProfile from "../views/EditProfile";
-import QRCode from "../views/QRCode";
 import Patient from "../views/Patient";
 import ScanQRCode from "../views/ScanQRCode";
 import PersonaQR from "../views/PersonaQR";
@@ -24,7 +23,6 @@ function AppNavigator() {
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="SignUp" component={SignUp} />
       <Stack.Screen name="EditProfile" component={EditProfile} />
-      <Stack.Screen name="QRCode" component={QRCode} />
       <Stack.Screen name="Patient" component={Patient} />
       <Stack.Screen name="ScanQRCode" component={ScanQRCode} />
       <Stack.Screen name="PersonaQR" component={PersonaQR} />
