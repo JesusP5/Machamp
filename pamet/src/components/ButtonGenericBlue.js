@@ -12,7 +12,7 @@ const ButtonGenericBlue = ({title, onPress}) => {
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: 'white',
+        backgroundColor: 'blue ',
         padding: 20,
         borderRadius: 30,
         alignItems: 'center',
