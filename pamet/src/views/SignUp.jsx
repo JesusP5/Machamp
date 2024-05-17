@@ -1,16 +1,19 @@
 import React from "react";
 import { View, Text, TextInput, Button, StyleSheet, Image} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Header from "../components/header";
 
-export default function SignUp() {
+export default function SignUp({navigation}) {
     return (
-        <SafeAreaView>
-        <Text style={styles.title}>Add your personal data</Text>
-        <Image source={require("../assets/LogoPamet.png")} style={styles.logo} />
-        <TextInput style={styles.input} placeholder="First Name" />
-        <TextInput style={styles.input} placeholder="Last Name" />
-        <Text style={styles.title}>Select your born date</Text>
-
+        <SafeAreaView style={styles.container}>
+        <Header onBack={()=>navigation.goBack()} onSetting={()=>navigation.navigate('EditProfile')}/>
+        <View style={styles.container}>
+            <Text style={styles.title}>Add your personal data</Text>
+            <Image source={require("../assets/LogoPamet.png")} style={styles.logo} />
+            <TextInput style={styles.input} placeholder="First Name" />
+            <TextInput style={styles.input} placeholder="Last Name" />
+            <Text style={styles.title}>Select your born date</Text>
+        </View>
         <Button title="Register"/>
         </SafeAreaView>
     );
@@ -18,9 +21,10 @@ export default function SignUp() {
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: "#FFF",
         flex: 1,
-        justifyContent: "center",
         alignItems: "center",
+        justifyContent: "center",
     },
     title: {
         fontSize: 24,
