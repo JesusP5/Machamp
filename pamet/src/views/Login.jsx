@@ -16,8 +16,12 @@ function Login({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <Image source={require("../assets/LogoPamet.png")} style={styles.logo} />
+      <View style={{ width:'65%' }}>
       <GenericInput placeholder="Correo Electronico" />
+      </View>
+      <View style={{ width:'65%' }}>
       <GenericInput placeholder="Contraseña" />
+      </View>
       <View style={{ flexDirection: "row", marginTop: 25, width:'50%' }}>
       <ButtonGenericWhite
         title="Iniciar Sesion"
