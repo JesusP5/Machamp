@@ -4,7 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import GenericInput from "../components/GenericInput";
 import ButtonGenericWhite from "../components/ButtonGenericWhite";
 import color from "../assets/Colors";
-
+import Header from "../components/header";
 
 function Login({ navigation }) {
   const handlePress = () => {
