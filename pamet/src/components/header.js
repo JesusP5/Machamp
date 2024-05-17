@@ -1,20 +1,19 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { FontAwesome, Entypo } from '@expo/vector-icons';
 
-export default function Header(){
-    return(
+export default function Header({onBack, onSetting}) {
+    return (
         <View style={styles.shadow}>
             <View style={styles.header}>
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.button}>
-                        <Entypo name="chevron-left" size={28} color="black" />                
+                    <TouchableOpacity style={styles.button} onPress={onBack}>
+                        <Entypo name="chevron-left" size={28} color="black" />
                     </TouchableOpacity>
                 </View>
                 <Text style={styles.headerText}>PAMET</Text>
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button} onPress={onSetting}>
                         <FontAwesome name="cog" size={24} color="black" />
                     </TouchableOpacity>
                 </View>
@@ -25,15 +24,15 @@ export default function Header(){
 
 const styles = StyleSheet.create({
     shadow: {
-        padding: 2,
+        padding: 10,
         shadowColor: '#000',
         shadowOffset: {
-            width: 0,  
-            height: -5,  
+            width: 0,
+            height: -5,
         },
         shadowOpacity: 0.1,
-        shadowRadius: 10,    
-        elevation: 5,        
+        shadowRadius: 10,
+        elevation: 5,
     },
     header: {
         width: '100%',
@@ -44,7 +43,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF',
         paddingHorizontal: 20,
     },
-    
     buttonContainer: {
         width: 40,
         height: 40,
@@ -52,22 +50,16 @@ const styles = StyleSheet.create({
         backgroundColor: '#F0F0F0',
         justifyContent: 'center',
         alignItems: 'center',
-
     },
     button: {
         width: 38,
         height: 38,
-        display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
     },
-    buttonImage: {
-        width: 30,
-        height: 30,
-    },
     headerText: {
         fontSize: 20,
-        fontWeight: 'regular',
+        fontWeight: 'normal',
         textAlign: 'center',
     },
 });

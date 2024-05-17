@@ -3,13 +3,9 @@ import { Text, StyleSheet, Image, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import GenericInput from "../components/GenericInput";
 import ButtonGenericWhite from "../components/ButtonGenericWhite";
-<<<<<<< HEAD
-import color from '../assets/Colors';
-=======
 import color from "../assets/Colors";
+import Header from "../components/header";
 
-
->>>>>>> 0c2d963c354e5038d1c4aa9c5f82159589db030e
 function Login({ navigation }) {
   const handlePress = () => {
     console.log("Bien");
@@ -19,10 +15,6 @@ function Login({ navigation }) {
   };
   return (
     <SafeAreaView style={styles.container}>
-<<<<<<< HEAD
-      <Image source={require('../assets/ImageTopU.png')} style={styles.background} />
-=======
->>>>>>> 0c2d963c354e5038d1c4aa9c5f82159589db030e
       <Image source={require("../assets/LogoPamet.png")} style={styles.logo} />
       <GenericInput placeholder="Correo Electronico" />
       <GenericInput placeholder="Contraseña" />

@@ -2,10 +2,10 @@ import React from "react";
 import { View, Text, TextInput, Button, StyleSheet, Image} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../components/header";
-export default function SignUp() {
+export default function SignUp({navigation}) {
     return (
         <SafeAreaView style={styles.container}>
-        <Header />
+        <Header onBack={()=>navigation.goBack()}/>
         <View style={styles.container}>
         <Text style={styles.title}>Add your personal data</Text>
         <Image source={require("../assets/LogoPamet.png")} style={styles.logo} />
