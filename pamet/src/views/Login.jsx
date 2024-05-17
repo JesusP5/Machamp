@@ -9,6 +9,7 @@ import Header from "../components/header";
 function Login({ navigation }) {
   const handlePress = () => {
     console.log("Bien");
+    navigation.navigate("Patient");
   };
   const SignUp = () => {
     navigation.navigate("SignUp");
