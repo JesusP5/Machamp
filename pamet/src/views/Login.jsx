@@ -46,7 +46,7 @@ styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     textAlign: "center",
-    marginTop: 50,
+    marginTop: 45,
     backgroundColor: "white",
   },
   textQuestion: {
