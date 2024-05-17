@@ -4,16 +4,16 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import GenericInput from "../components/GenericInput";
 import ButtonGenericWhite from "../components/ButtonGenericWhite";
 import color from "../assets/Colors";
-import Header from "../components/header";
+
 
 function Login({ navigation }) {
   const handlePress = () => {
     console.log("Bien");
-    navigation.navigate("PersonalQR")
+    navigation.navigate("QRCode");
   };
   const SignUp = () => {
     navigation.navigate("SignUp");
-  };
+  }; 
   return (
     <SafeAreaView style={styles.container}>
       <Image source={require("../assets/LogoPamet.png")} style={styles.logo} />
@@ -34,7 +34,7 @@ function Login({ navigation }) {
       <Text style={styles.textQuestion}>
         ¿No tienes una cuenta?
         <Text onPress={SignUp} style={styles.SignUp}>
-          {" "}
+         
           Registrarse
         </Text>
       </Text>
