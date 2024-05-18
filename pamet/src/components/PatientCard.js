@@ -3,41 +3,48 @@ import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions } from 'rea
 
 const windowWidth = Dimensions.get('window').width;
 
-
-function getGenderInfo(Gender) {
-    let prefix = '';
-    let genderText = '';
-
-    if (Gender.toLowerCase() === 'm') {
-        prefix = 'Sr.';
-        genderText = 'Masculino';
-    } else if (Gender.toLowerCase() === 'f') {
-        prefix = 'Sra.';
-        genderText = 'Femenino';
-    }
-
-    return { prefix, genderText };
-}
-
 function getUrgencyLevel(LastRevision) {
     if (LastRevision.includes('minuto')) {
         return '#9EFF3C';
     } else if (LastRevision.includes('hora')) {
-        return '#FFD43C';
-    } else if (LastRevision.includes('dia')) {
         return '#FFFF00';
-    } else {
+    } else if (LastRevision.includes('día')) {
+        return '#FFD43C';
+    } else if (LastRevision.includes('semana')){
+        return '#FFA500';
+    
+    }else {
         return '#008000';
     }
 }
 
-export default function PatientCard({ LastRevision, Gender, Name, FirstName, LastName, BornDate, ID, Observations, onPress = () => { } }) {
-    const { prefix, genderText } = getGenderInfo(Gender);
+export default function PatientCard(    
+    { 
+        LastRevision, 
+        Name, 
+        FirstName, 
+        LastName, 
+        BornDate, 
+        ID, 
+        Observations, 
+    onPress = () => { } }) {
+        
     const styles = StyleSheet.create({
         container: {
             width: windowWidth * 0.8,
             backgroundColor: '#fff',
             borderRadius: 5,
+            marginVertical: 10,
+            shadowColor: '#000',
+            shadowOffset: {
+                width: 0,
+                height: 2,
+            },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+            elevation: 5,
+            borderColor: '#F0F0F0',
+            borderWidth: 1,
         },
         card: {
             width: '100%',
@@ -45,6 +52,7 @@ export default function PatientCard({ LastRevision, Gender, Name, FirstName, Las
             borderRadius:5,
             borderRightColor: getUrgencyLevel(LastRevision),
             borderRightWidth: 5,
+
             
         },
         LastRevisionContainer: {
@@ -55,16 +63,6 @@ export default function PatientCard({ LastRevision, Gender, Name, FirstName, Las
             flex: 1,
             flexDirection: 'row',
             alignItems: 'center',
-        },
-        lineContainer: {
-            flex: 1,
-        },
-        lineStyle:{
-            borderBottomColor: '#D5D5D5',
-            borderBottomWidth: 1,
-            alignSelf:'stretch',
-            width: '80%',
-            marginLeft: 35,
         },
         LastRevisionText: {
             fontSize: 16,
@@ -129,15 +127,11 @@ export default function PatientCard({ LastRevision, Gender, Name, FirstName, Las
                         <Text style={styles.LastRevisionText}>Última revisión:</Text>
                         <Text style={styles.LastRevisionText2}> hace {LastRevision}</Text>
                     </View>
-                    <View style={styles.lineContainer}>
-                        <View style={styles.lineStyle} />
-                    </View>
                 </View>
                 <View style={styles.GeneralInfoContainer}>
                     <View style={styles.GeneralInfoTextContainer}>
-                        <Text style={styles.NameText}>{prefix} {FirstName} {LastName}, {Name}</Text>
+                        <Text style={styles.NameText}>{FirstName} {LastName}, {Name}</Text>
                         <Text style={styles.NormalText}><Text style={styles.boldText}>Fecha de nacimiento:</Text> {BornDate}</Text>
-                        <Text style={styles.NormalText}><Text style={styles.boldText}>Género:</Text> {genderText}</Text>
                         <Text style={styles.NormalText}><Text style={styles.boldText}>Expediente:</Text> {ID}</Text>
                     </View>
                     <View style={styles.userIconContainer}>

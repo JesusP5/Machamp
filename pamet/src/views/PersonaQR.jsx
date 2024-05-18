@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, Image, View } from "react-native";
+import { Text, StyleSheet, Image, View, Button} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import color from "../assets/Colors";
 
@@ -13,6 +13,7 @@ function PersonalQR({ navigation }) {
             <Text>Tu codigo QR</Text>
             <Text>Propociona este codigo a tu institución para tu registro</Text>
         </View>
+        <Button title="continue" onPress={()=>navigation.navigate('Patient')}></Button>
     </SafeAreaView>
   );
 }
