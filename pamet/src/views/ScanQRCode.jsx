@@ -7,9 +7,9 @@ import NavBar from "../components/navbar";
 
 function ScanQRCode({ navigation }) {
   return (
-    <>
-      <Header onBack={()=>navigation.goBack()} onSetting={()=>navigation.navigate('')}/>
+  
       <SafeAreaView style={styles.safearea}>
+      <Header onBack={()=>navigation.goBack()} onSetting={()=>navigation.navigate('')}/>
           <View style={styles.WhiteBox}>
               <Text style={styles.textIntro}> <Text style={styles.bold}>Scan QR code</Text>{"\n"}<Text>Here you can scan patient´s QR code using your camera to assign them to your care.</Text></Text>
               <Image source={require('../assets/img/qr.png')} style={styles.image} />
@@ -18,12 +18,11 @@ function ScanQRCode({ navigation }) {
               </TouchableOpacity>
           </View>
       </SafeAreaView>
-    </>
+
   );
 }
 styles = StyleSheet.create({
     safearea: {
-        padding: 40,
         flex: 1, 
         alignItems: 'center',
         textAlign: 'center',
@@ -33,7 +32,7 @@ styles = StyleSheet.create({
         backgroundColor: 'white',
         width: '100%',
         marginTop: '0%',
-        height: '90%',
+        height: '100%',
         borderRadius: 20,
         alignItems: 'center',
         justifyContent: 'flex-start',
