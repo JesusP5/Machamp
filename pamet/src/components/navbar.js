@@ -56,4 +56,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    navBar: {
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
+    },
 });

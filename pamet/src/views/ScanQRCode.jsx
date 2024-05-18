@@ -9,7 +9,7 @@ function ScanQRCode({ navigation }) {
   return (
   
       <SafeAreaView style={styles.safearea}>
-      <Header onBack={()=>navigation.goBack()} onSetting={()=>navigation.navigate('')}/>
+      <Header onBack={()=>navigation.goBack()} onSetting={()=>navigation.navigate('EditProfile')}/>
           <View style={styles.WhiteBox}>
               <Text style={styles.textIntro}> <Text style={styles.bold}>Scan QR code</Text>{"\n"}<Text>Here you can scan patient´s QR code using your camera to assign them to your care.</Text></Text>
               <Image source={require('../assets/img/qr.png')} style={styles.image} />
@@ -17,6 +17,7 @@ function ScanQRCode({ navigation }) {
                 <Text style={styles.buttonText}>Scan QR code</Text>
               </TouchableOpacity>
           </View>
+          <NavBar navigation={navigation} style={styles.navBar} />
       </SafeAreaView>
 
   );
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
         width: '100%',
         marginTop: '0%',
         height: '100%',
-        borderRadius: 20,
+        borderRadius: 0,
         alignItems: 'center',
         justifyContent: 'flex-start',
         shadowColor: "#000",
