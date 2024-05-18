@@ -34,7 +34,7 @@ export default function SignUp({ navigation }) {
       password: password,
       image: imageSource,
     };
-    navigation.navigate('EditProfile', data);
+    navigation.navigate('CompleteInfoPatient', data);
   };
 
   const handleImgPress = async () => {
