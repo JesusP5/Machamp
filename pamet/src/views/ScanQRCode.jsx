@@ -21,7 +21,7 @@ function ScanQRCode({ navigation }) {
 
   );
 }
-styles = StyleSheet.create({
+const styles = StyleSheet.create({
     safearea: {
         flex: 1, 
         alignItems: 'center',
