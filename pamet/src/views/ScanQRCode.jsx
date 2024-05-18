@@ -12,7 +12,7 @@ function ScanQRCode({ navigation }) {
       <SafeAreaView style={styles.safearea}>
           <View style={styles.WhiteBox}>
               <Text style={styles.textIntro}> <Text style={styles.bold}>Scan QR code</Text>{"\n"}<Text>Here you can scan patient´s QR code using your camera to assign them to your care.</Text></Text>
-              <Image source={require('./assets/qr.png')} style={styles.image} />
+              <Image source={require('../assets/img/qr.png')} style={styles.image} />
               <TouchableOpacity style={styles.button}>
                 <Text style={styles.buttonText}>Scan QR code</Text>
               </TouchableOpacity>
