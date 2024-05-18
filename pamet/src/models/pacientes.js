@@ -7,6 +7,10 @@ const pacientes = [
         phone: "442 144 6031",
         dischargeDate: "2021-09-01",
         curp: "OICA960901HQRLLN05",
+        gender: "Masculino",
+        lastRevision: "Hace 5 minutos",
+        bornDate: "1996-09-01",
+        observations: "Paciente con gripe",
         medicines: [
             {
                 id: 1,
@@ -46,6 +50,10 @@ const pacientes = [
         phone: "555 123 4567",
         dischargeDate: "2022-02-15",
         curp: "MOGB940215MDFLMN09",
+        gender: "Femenino",
+        lastRevision: "Hace 2 horas",
+        bornDate: "1994-02-15",
+        observations: "Paciente con infección de garganta",
         medicines: [
             {
                 id: 1,
@@ -85,6 +93,10 @@ const pacientes = [
         phone: "333 987 6543",
         dischargeDate: "2023-03-20",
         curp: "HELC930320HJCLPR03",
+        gender: "Masculino",
+        lastRevision: "Hace 1 semana",
+        bornDate: "1993-03-20",
+        observations: "Paciente con hipertensión",
         medicines: [
             {
                 id: 1,
@@ -124,6 +136,10 @@ const pacientes = [
         phone: "222 567 8901",
         dischargeDate: "2024-01-10",
         curp: "PESD920110MDFLRN08",
+        gender: "Femenino",
+        lastRevision: "Hace 3 días",
+        bornDate: "1992-01-10",
+        observations: "Paciente con diabetes tipo 2",
         medicines: [
             {
                 id: 1,
