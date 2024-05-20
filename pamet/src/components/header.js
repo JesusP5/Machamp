@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { FontAwesome, Entypo } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons'; 
 
-export default function Header({onBack, onSetting}) {
-    return (
-        <View style={styles.header}>
+export default function Header({onBack, onSetting, isHome = false,}) {
+    if (isHome === true){
+        return (
+            <View style={styles.header}>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity style={styles.button} onPress={onBack}>
                     <Entypo name="chevron-left" size={25} color="black" />
@@ -17,8 +18,24 @@ export default function Header({onBack, onSetting}) {
                     <FontAwesome name="cog" size={25} color="black" />
                 </TouchableOpacity>
             </View>
+            </View>
+        )
+    }
+    else if(isHome === false){
+        return (
+        <View style={styles.header}>
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.button} onPress={onBack}>
+                    <Entypo name="chevron-left" size={25} color="black" />
+                </TouchableOpacity>
+            </View>
+            <Text style={styles.headerText}>PAMET</Text>
+            <View style={styles.ImageContainer}>
+                <Image source={require('../assets/LogoPamet.png')} style={styles.image} />
+            </View>
         </View>
-    );
+        )
+    }
 }
 
 const styles = StyleSheet.create({
@@ -42,11 +59,23 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
         elevation: 5,
     },
+    image: {
+        width: 40,
+        height: 40,
+        resizeMode: 'contain',
+    },
     buttonContainer: {
         width: 40,
         height: 40,
         borderRadius: 20,
         backgroundColor: '#F0F0F0',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    ImageContainer: {
+        width: 40,
+        height: 40,
+        backgroundColor: '#FFF',
         justifyContent: 'center',
         alignItems: 'center',
     },

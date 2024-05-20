@@ -57,7 +57,7 @@ export default function SignUp({ navigation }) {
       <SafeAreaView style={styles.container}>
         <Header
           onBack={() => navigation.goBack()}
-          onSetting={() => navigation.navigate("EditProfile")}
+          
         />
         <View style={styles.cont}>
           <Text style={styles.title}>Ingresa tus datos</Text>
