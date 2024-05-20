@@ -9,7 +9,7 @@ function ScanQRCode({ navigation }) {
   return (
   
       <SafeAreaView style={styles.safearea}>
-      <Header onBack={()=>navigation.goBack()} onSetting={()=>navigation.navigate('EditProfile')}/>
+      <Header onBack={()=>navigation.goBack()} onSetting={()=>navigation.navigate('EditProfile')} isHome={true}/>
           <View style={styles.WhiteBox}>
               <Text style={styles.textIntro}> <Text style={styles.bold}>Scan QR code</Text>{"\n"}<Text>Here you can scan patient´s QR code using your camera to assign them to your care.</Text></Text>
               <Image source={require('../assets/img/qr.png')} style={styles.image} />

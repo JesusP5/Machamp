@@ -88,7 +88,7 @@ function Patient({ navigation }) {
                     </View>
                 </View>
             </Modal>
-            <Header onBack={() => navigation.goBack()} onSetting={() => navigation.navigate('EditProfile')} />
+            <Header onBack={() => navigation.goBack()} onSetting={() => navigation.navigate('EditProfile')} isHome={true}/>
             <View style={styles.userContainer}>
                 <Image source={{ uri: user.profileImage }} style={styles.userImage} />
                 <Text style={styles.userFullName}>{user.name} {user.firstName} {user.lastName}</Text>
