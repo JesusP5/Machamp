@@ -40,7 +40,7 @@ styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: '85%',
-        height: '70%',
+        height: '75%',
         borderRadius: 20,
         backgroundColor: 'white',
         shadowColor: '#000',

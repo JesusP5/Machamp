@@ -4,40 +4,45 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import color from "../assets/Colors";
 import Header from "../components/header";
 import NavBar from "../components/navbar";
+import { Octicons } from '@expo/vector-icons';
 
 function ScanQRCode({ navigation }) {
   return (
   
       <SafeAreaView style={styles.safearea}>
-      <Header onBack={()=>navigation.goBack()} onSetting={()=>navigation.navigate('EditProfile')} isHome={true}/>
-          <View style={styles.WhiteBox}>
-              <Text style={styles.textIntro}> <Text style={styles.bold}>Scan QR code</Text>{"\n"}<Text>Here you can scan patient´s QR code using your camera to assign them to your care.</Text></Text>
-              <Image source={require('../assets/img/qr.png')} style={styles.image} />
-              <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText}>Scan QR code</Text>
-              </TouchableOpacity>
-          </View>
-          <NavBar navigation={navigation} style={styles.navBar} />
+        <Header onBack={()=>navigation.goBack()} onSetting={()=>navigation.navigate('EditProfile')} isHome={true}/>
+        <View style={styles.container}>
+            <View style={styles.QRCard}>
+                <Text style={styles.titleText}>Scan QR code</Text>
+                <Text style={styles.indicationsText}>Here you can scan patient´s QR code using your camera to assign them to your care.</Text>
+                <Image source={require('../assets/img/ScanQRImage.png')} style={styles.image} />
+                <TouchableOpacity style={styles.scanQRButton}>
+                    <Text style={styles.buttonText}>Scan QR code</Text>
+                    <Octicons name="chevron-right" size={24} color="white" />
+                </TouchableOpacity>
+            </View>
+        </View>
+        <NavBar navigation={navigation} style={styles.navBar} />
       </SafeAreaView>
 
   );
 }
 const styles = StyleSheet.create({
     safearea: {
-        flex: 1, 
-        alignItems: 'center',
-        textAlign: 'center',
-        backgroundColor: 'white'
+        flex: 1,
     },
-    WhiteBox: {
-        backgroundColor: 'white',
-        width: '100%',
-        marginTop: '0%',
-        height: '100%',
-        borderRadius: 0,
+    container:{
+        flex: 1,
         alignItems: 'center',
-        justifyContent: 'flex-start',
-        shadowColor: "#000",
+        justifyContent: 'center',
+    },
+    QRCard:{
+        width: '85%',
+        height: '75%',
+        marginTop: -50,
+        borderRadius: 20,
+        backgroundColor: 'white',
+        shadowColor: '#000',
         shadowOffset: {
             width: 0,
             height: 2,
@@ -45,37 +50,53 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
+        borderColor: 'white',
+        borderWidth: 1,
+        padding: 20,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-    textIntro: {
-        marginTop: 60,
+    titleText:{
+        fontSize: 24,
+        color: color.black,
+        fontWeight: 'bold',
+    },
+    indicationsText:{
         fontSize: 16,
-        marginBottom: 20,
-        width: '85%',
-        color: '#2e2e2e',
+        color: color.black,
+        marginTop: 10,
         textAlign: 'center',
-        fontWeight: 'light'
     },
-    bold: {
-        fontWeight: 'bold'
-    },
-    image: {
+    image:{
         width: 200,
         height: 200,
-        resizeMode: 'contain',
-        marginTop: 30,
+        marginVertical: 35,
     },
-    button: {
-        backgroundColor: color.primary,
-        paddingVertical: 15,
-        paddingHorizontal: 30,
-        borderRadius: 20,
-        marginTop: 50,
+    scanQRButton:{
+        backgroundColor: '#008DD9',
+        width: 200,
+        height: 55,
+        borderRadius: 50,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        marginTop: 20,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+        
     },
-    buttonText: {
+    buttonText:{
         color: 'white',
         fontWeight: 'bold',
-        fontSize: 16,
-    }
+        fontSize: 18,
+    },
+    
 });
 
 export default ScanQRCode;

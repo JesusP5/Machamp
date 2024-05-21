@@ -10,10 +10,10 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import color from "../assets/Colors";
 import Header from "../components/header";
-import NavBar from "../components/navbar";
 
 function CompleteInfoPatient({ navigation, route }) {
   const { username, image } = route.params;
+  const defaultImage = require("../assets/img/UserPicture.png");
   return (
     <SafeAreaView>
       <Header
@@ -23,7 +23,7 @@ function CompleteInfoPatient({ navigation, route }) {
       <View style={styles.top} />
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={styles.head} />
-        <Image source={image} style={styles.profile} />
+        <Image source={image || defaultImage} style={styles.profile} />
         <Text style={styles.name}>{username}</Text>
         <View style={styles.personalBox}>
           <Text style={styles.personalData}>Datos Personales</Text>
