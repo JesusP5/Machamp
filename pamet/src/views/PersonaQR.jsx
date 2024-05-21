@@ -2,55 +2,48 @@ import React from "react";
 import { Text, StyleSheet, Image, View, Button} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import color from "../assets/Colors";
-
+import Header from "../components/header";
+import Navbar from "../components/navbar";
+import usuarios from "../models/usuarios";
 
 function PersonalQR({ navigation }) {
-  return (
-    <SafeAreaView style={styles.safearea}>
-        <View style={styles.BlueTopBackground} ></View>
-        <View style={styles.WhiteBox}>
-            <Text style={styles.textIntro}> Hola Nombre!</Text>
-            <Text>Tu codigo QR</Text>
-            <Text>Propociona este codigo a tu institución para tu registro</Text>
-        </View>
-        <Button title="continue" onPress={()=>navigation.navigate('Patient')}></Button>
-    </SafeAreaView>
-  );
+    const usuario = usuarios[0];
+    return (
+        <SafeAreaView style={styles.safearea}>
+            <Header onBack={() => navigation.goBack()} onSetting={() => navigation.navigate('EditProfile')} isHome={true}/>
+            <View style={styles.container}>
+                <View style={styles.qrContainer}>
+                    <Text style={styles.helloText}> Hola {usuario.name}!</Text>
+                    <Image source={require('../assets/img/EjemploQR.png')} style={{width: 200, height: 200}}/>
+                    <Text style={styles.yourOwnQR}>Tu codigo QR</Text>
+                    <Text style={styles.indicationsText}>Presenta este codigo QR para ser agregado a tu institucion.</Text>
+                </View>
+            </View>
+            <Navbar navigation={navigation} styles={styles.navBar}/>
+        </SafeAreaView>
+    );
 }
+
 styles = StyleSheet.create({
     safearea: {
-        padding: 40,
-        flex: 1, 
-        alignItems: 'center',
-        textAlign: 'center',
-        backgroundColor: 'white'
+        flex: 1,
+        backgroundColor: color.white,
     },
-    BlueTopBackground: {
-        backgroundColor: color.primary,
-        position: 'absolute',
-        width: "126%",
-        height: "25%",
-        borderRadius: 40,
+    container: {
+        flex: 1,
+        backgroundColor: color.white,
         alignItems: 'center',
         justifyContent: 'center',
-        shadowColor: "#008EDA",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.50,
-        shadowRadius: 3.84,
-        elevation: 5,
     },
-    WhiteBox: {
-        backgroundColor: 'white',
-        width: '100%',
-        marginTop: '0%',
-        height: '90%',
-        borderRadius: 20,
+    qrContainer: {
+        marginTop: -50,
         alignItems: 'center',
-        justifyContent: 'flex-start',
-        shadowColor: "#000",
+        justifyContent: 'center',
+        width: '85%',
+        height: '70%',
+        borderRadius: 20,
+        backgroundColor: 'white',
+        shadowColor: '#000',
         shadowOffset: {
             width: 0,
             height: 2,
@@ -58,16 +51,29 @@ styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
+        borderColor: 'white',
+        borderWidth: 1,
+        padding: 20,
     },
-    textIntro: {
-        marginTop: 20,
-        fontSize: 16,
-        marginBottom: 60,
-        width: '85%',
-        color: '#2e2e2e',
+    helloText: {
+        fontSize: 24,
+        color: color.black,
+        fontWeight: 'bold',
+    },
+    yourOwnQR: {
+        fontSize: 20,
+        color: color.black,
+        fontWeight: 'bold',
+    },
+    indicationsText: {
+        fontSize: 18,
+        width: '80%',
         textAlign: 'center',
-        fontWeight: 'light'
-        
+        color: color.black,
+    },
+    navBar: {
+        position: 'absolute',
+        bottom: 0,
     },
 
     });
