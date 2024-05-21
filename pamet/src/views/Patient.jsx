@@ -115,6 +115,7 @@ function Patient({ navigation }) {
                                 BornDate={patient.bornDate}
                                 ID={patient.id}
                                 Observations={patient.observations}
+                                onPress={() => navigation.navigate('CompleteInfoPatient', { patient })}
                             />
                         );
                     })}

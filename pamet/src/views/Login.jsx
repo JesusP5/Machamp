@@ -6,7 +6,10 @@ import ButtonGenericWhite from "../components/ButtonGenericWhite";
 import color from "../assets/Colors";
 
 
-function Login({ navigation }) {
+function Login({ navigation, route}) {
+  const email = route.params?.email;
+  const password = route.params?.password;
+  
   const handlePress = () => {
     console.log("Bien");
     navigation.navigate("PersonaQR");
@@ -19,10 +22,10 @@ function Login({ navigation }) {
     <SafeAreaView style={styles.container}>
       <Image source={require("../assets/LogoPamet.png")} style={styles.logo} />
       <View style={{ width:'65%' }}>
-      <GenericInput placeholder="Correo Electronico" />
+      <GenericInput placeholder="Correo Electronico" value={email}/>
       </View>
       <View style={{ width:'65%' }}>
-      <GenericInput placeholder="Contraseña" />
+      <GenericInput placeholder="Contraseña" value={password} />
       </View>
       <View style={{ flexDirection: "row", marginTop: 25, width:'50%' }}>
       <ButtonGenericWhite
