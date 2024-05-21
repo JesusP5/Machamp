@@ -8,6 +8,11 @@ export default function NavBar({navigation}) {
 
     return (
         <View style={styles.navbar}>
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('PersonaQR')}>
+                    <AntDesign name="qrcode" size={25} color="black" />
+                </TouchableOpacity>
+            </View>
             <View>
                 <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('Patient')}>
                     <FontAwesome5 name="user" size={25}/>
