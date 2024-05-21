@@ -1,7 +1,21 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableWithoutFeedback, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  Image,
+} from "react-native";
 
-export default function PatientCard({ username, expediente, edad, genero, telefono, fechaAlta, curp }) {
+export default function PatientCard({
+  username,
+  expediente,
+  edad,
+  genero,
+  telefono,
+  fechaAlta,
+  curp,
+}) {
   const [expanded, setExpanded] = useState(false);
 
   const toggleExpanded = () => {
@@ -13,20 +27,42 @@ export default function PatientCard({ username, expediente, edad, genero, telefo
       <TouchableWithoutFeedback onPress={toggleExpanded}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Datos del Paciente</Text>
-          <Image 
-            source={expanded ? require('../assets/up.png') : require('../assets/down.png')} 
+          <Image
+            source={
+              expanded
+                ? require("../assets/up.png")
+                : require("../assets/down.png")
+            }
             style={styles.icon}
           />
         </View>
       </TouchableWithoutFeedback>
       {expanded && (
         <View style={styles.dataContainer}>
-          <Text><Text style={styles.label}>Expediente:</Text> <Text style={styles.value}>{expediente}</Text></Text>
-          <Text><Text style={styles.label}>Edad:</Text> <Text style={styles.value}>{edad}</Text></Text>
-          <Text><Text style={styles.label}>Género:</Text> <Text style={styles.value}>{genero}</Text></Text>
-          <Text><Text style={styles.label}>Teléfono:</Text> <Text style={styles.value}>{telefono}</Text></Text>
-          <Text><Text style={styles.label}>Fecha de Alta:</Text> <Text style={styles.value}>{fechaAlta}</Text></Text>
-          <Text><Text style={styles.label}>CURP:</Text> <Text style={styles.value}>{curp}</Text></Text>
+          <Text>
+            <Text style={styles.label}>Expediente:</Text>{" "}
+            <Text style={styles.value}>{expediente}</Text>
+          </Text>
+          <Text>
+            <Text style={styles.label}>Edad:</Text>{" "}
+            <Text style={styles.value}>{edad}</Text>
+          </Text>
+          <Text>
+            <Text style={styles.label}>Género:</Text>{" "}
+            <Text style={styles.value}>{genero}</Text>
+          </Text>
+          <Text>
+            <Text style={styles.label}>Teléfono:</Text>{" "}
+            <Text style={styles.value}>{telefono}</Text>
+          </Text>
+          <Text>
+            <Text style={styles.label}>Fecha de Alta:</Text>{" "}
+            <Text style={styles.value}>{fechaAlta}</Text>
+          </Text>
+          <Text>
+            <Text style={styles.label}>CURP:</Text>{" "}
+            <Text style={styles.value}>{curp}</Text>
+          </Text>
         </View>
       )}
     </View>
@@ -48,9 +84,9 @@ const styles = StyleSheet.create({
   titleContainer: {
     backgroundColor: "#36BCFA",
     padding: 10,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   title: {
     fontSize: 18,

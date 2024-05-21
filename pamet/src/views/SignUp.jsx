@@ -34,7 +34,7 @@ export default function SignUp({ navigation }) {
       password: password,
       image: imageSource,
     };
-    navigation.navigate('Login', data);
+    navigation.navigate("Login", data);
   };
 
   const handleImgPress = async () => {
@@ -55,10 +55,7 @@ export default function SignUp({ navigation }) {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <SafeAreaView style={styles.container}>
-        <Header
-          onBack={() => navigation.goBack()}
-          
-        />
+        <Header onBack={() => navigation.goBack()} />
         <View style={styles.cont}>
           <Text style={styles.title}>Ingresa tus datos</Text>
           <TouchableOpacity onPress={handleImgPress} style={styles.imgcont}>

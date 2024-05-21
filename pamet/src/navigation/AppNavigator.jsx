@@ -27,7 +27,10 @@ function AppNavigator() {
       <Stack.Screen name="Patient" component={Patient} />
       <Stack.Screen name="ScanQRCode" component={ScanQRCode} />
       <Stack.Screen name="PersonaQR" component={PersonaQR} />
-      <Stack.Screen name="CompleteInfoPatient" component={CompleteInfoPatient} />
+      <Stack.Screen
+        name="CompleteInfoPatient"
+        component={CompleteInfoPatient}
+      />
     </Stack.Navigator>
   );
 }

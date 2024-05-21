@@ -1,24 +1,29 @@
 import React from "react";
 import { View, StyleSheet, TextInput, Text } from "react-native";
-import Octicons from 'react-native-vector-icons/Octicons';
+import Octicons from "react-native-vector-icons/Octicons";
 
-export default function GenericInput({ children, placeholder, label, icon, style, ...props }) {
+export default function GenericInput({
+  children,
+  placeholder,
+  label,
+  icon,
+  style,
+  ...props
+}) {
   return (
     <View style={[styles.container, style]}>
-      <TextInput 
-        style={styles.input} 
-        placeholder={placeholder} 
-        {...props} 
-      />
-      {icon && <Octicons name={icon} size={24} color="black" style={styles.icon} />}
+      <TextInput style={styles.input} placeholder={placeholder} {...props} />
+      {icon && (
+        <Octicons name={icon} size={24} color="black" style={styles.icon} />
+      )}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginHorizontal: 10,
     marginVertical: 10,
     borderTopWidth: 0,
