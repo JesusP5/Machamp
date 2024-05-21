@@ -9,7 +9,7 @@ import Patient from "../views/Patient";
 import ScanQRCode from "../views/ScanQRCode";
 import PersonaQR from "../views/PersonaQR";
 import CompleteInfoPatient from "../views/CompleteInfoPatient";
-
+import MedicScreen from "../views/MedicScreen";
 const Stack = createNativeStackNavigator();
 
 function AppNavigator() {
@@ -31,6 +31,7 @@ function AppNavigator() {
         name="CompleteInfoPatient"
         component={CompleteInfoPatient}
       />
+      <Stack.Screen name="MedicScreen" component={MedicScreen} />
     </Stack.Navigator>
   );
 }

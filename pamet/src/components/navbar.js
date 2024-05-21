@@ -31,6 +31,15 @@ export default function NavBar({ navigation }) {
           <Feather name="camera" size={25} />
         </TouchableOpacity>
       </View>
+      {/* boton para pantalla de pruebas */}
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("MedicScreen")}
+        >
+          <AntDesign name="edit" size={24} color="black" />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
