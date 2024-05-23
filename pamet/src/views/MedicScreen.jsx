@@ -18,15 +18,15 @@ export default function MedicScreen({ navigation }) {
             <Text style={styles.containerTitle}>Medicos</Text>
             <View style={styles.content}>
                 <ScrollView contentContainerStyle={styles.scrollView} showsVerticalScrollIndicator={false}>
-                    <MedicCard name={'Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
-                    <MedicCard name={'Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
-                    <MedicCard name={'Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
-                    <MedicCard name={'Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
-                    <MedicCard name={'Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
-                    <MedicCard name={'Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
-                    <MedicCard name={'Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
-                    <MedicCard name={'Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
-                    <MedicCard name={'Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
+                    <MedicCard name={'Dr. Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
+                    <MedicCard name={'Dr.Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
+                    <MedicCard name={'Dr.Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
+                    <MedicCard name={'Dr.Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
+                    <MedicCard name={'Dr.Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
+                    <MedicCard name={'Dr.Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
+                    <MedicCard name={'Dr.Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
+                    <MedicCard name={'Dr.Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
+                    <MedicCard name={'Dr.Gregory House'} area={'Medical diagnostic'} mainArea={'infectious diseases and nephrology'}/>
                 </ScrollView>
                 <TouchableOpacity style={styles.button}>
                     <Text style={styles.buttonText}>Agregar Medico</Text>
