@@ -7,7 +7,7 @@ export default function MedicCard({name, firstName, area, mainArea, photo}) {
   return (
     <View style={styles.container}>
         <View style={styles.leftContainer}>
-            <Text style={styles.containerTitle}>Dr. {firstName} {name}</Text>      
+            <Text style={styles.containerTitle}>{firstName} {name}</Text>      
             <Text style={styles.containerSubtitle}>{area}</Text>
             <Text style={styles.containerSubtitle}>{mainArea}</Text>
             <TouchableOpacity style={styles.button}>
@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginVertical: 10,
         padding: 15,
+        paddingRight: 0,
         justifyContent: 'space-between',
         alignItems: 'center',
         shadowColor: '#000',
@@ -38,10 +39,10 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.34,
         shadowRadius: 6.27,
-        elevation: 10,
+        elevation: 5,
         borderColor: 'gray',
         borderWidth: 0,
-        marginHorizontal: 10,
+        marginHorizontal:0,
     },
     button: {
         backgroundColor: '#008EDA',

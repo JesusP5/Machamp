@@ -35,7 +35,7 @@ export default function NavBar({ navigation }) {
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("MedicScreen")}
+          onPress={() => navigation.navigate("PersonalAndPatients")}
         >
           <AntDesign name="edit" size={24} color="black" />
         </TouchableOpacity>
