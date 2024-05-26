@@ -6,6 +6,7 @@ import {
   ScrollView,
   StyleSheet,
   TouchableOpacity,
+  Map,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../components/header";
@@ -19,6 +20,12 @@ import doctors from "../models/doctors";
 export default function PersonalAndPatients({ navigation }) {
   const [filterText, setFilterText] = useState('Medicos');
   const [modalVisible, setModalVisible] = useState(false);
+  const [selectedMedics, setSelectedMedics] = useState([]);
+
+  const handleSelectMedics = (medics) => {
+    setSelectedMedics(medics);
+    setModalVisible(false);
+  };
 
   return (
     <SafeAreaView>
@@ -46,6 +53,15 @@ export default function PersonalAndPatients({ navigation }) {
             style={styles.cardsBox}
             showsVerticalScrollIndicator={false}
           >
+          {selectedMedics.map((doctor, index) => (
+            <MedicCard
+              key={index}
+              name={doctor.name}
+              area={doctor.Department}
+              mainArea={doctor.Specialization}
+              photo={doctor.ProfilePicture}
+              />
+          ))}
             <MedicCard
               name={(filterText == 'Medicos'?'Dr. Gregory House':'Juan Perez')}
               area={"Medical diagnostic"}
@@ -59,7 +75,7 @@ export default function PersonalAndPatients({ navigation }) {
           </View>
         </View>
       </View>
-      <AddMedicsModal visible={modalVisible} onClose={() => setModalVisible(false)} medics={doctors}/>
+      <AddMedicsModal visible={modalVisible} onClose={handleSelectMedics} medics={doctors}/>
     </SafeAreaView>
   );
 }

@@ -14,7 +14,8 @@ export default function AddMedicsModal({visible, onClose, medics}) {
         });
     };
     const handleAddMedics = () => {
-        console.log(selectedMedics);
+        console.log(selectedMedics.length + ' medicos agregados');
+        onClose(selectedMedics);
         setSelectedMedics([]);
     }
 
@@ -44,8 +45,9 @@ export default function AddMedicsModal({visible, onClose, medics}) {
                                 area={doctor.Department}
                                 mainArea={doctor.Specialization}
                                 photo={doctor.ProfilePicture}
-                                onSelect={() => handleSelectMedic(doctor)}
+                                onSelect={() => handleSelectMedics(doctor)}
                                 isSelected={selectedMedics.includes(doctor)}
+                                showCheckbox={true}
                             />
                         ))}
                         <TouchableOpacity style={styles.addDoctorButton} onPress={handleAddMedics}>
