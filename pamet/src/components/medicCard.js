@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import ButtonGenericBlue from './ButtonGenericBlue';
 const defaultImage = require('../assets/img/dr_house2.jpg'); // Asegúrate de cambiar esto a la ruta de tu imagen predeterminada
+import {Checkbox} from 'expo-checkbox';
 
-export default function MedicCard({name, firstName, area, mainArea, photo}) {
+export default function MedicCard({name, area, mainArea, photo, onSelect, isSelected, showCheckbox = false}) {
   return (
     <View style={styles.container}>
         <View style={styles.leftContainer}>
-            <Text style={styles.containerTitle}>{firstName} {name}</Text>      
+            <Text style={styles.containerTitle}>{name}</Text>      
             <Text style={styles.containerSubtitle}>{area}</Text>
             <Text style={styles.containerSubtitle}>{mainArea}</Text>
             <TouchableOpacity style={styles.button}>
@@ -15,7 +15,18 @@ export default function MedicCard({name, firstName, area, mainArea, photo}) {
             </TouchableOpacity>
         </View>
         <View style={styles.rightContainer}>
-            <Image source={photo || defaultImage} style={styles.image} />
+            <Image source={photo ? {uri:photo} : defaultImage} style={styles.image} />
+                {showCheckbox && (
+                    <View style={styles.checkBoxContainer}>
+                        <Text style={styles.text}>Seleccionar</Text>
+                        <Checkbox 
+                            value={isSelected}
+                            onValueChange={onSelect}
+                            style={styles.checkbox}
+                            color={'#008EDA'}
+                    />
+                    </View>
+                )}
         </View>
     </View>
   )
@@ -61,10 +72,26 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     leftContainer: {
-        width: '70%',
+        width: '65%',
     },
     rightContainer: {
-        width: '30%',
+        width: '35%',
+        flexDirection: 'column',
+    },
+    checkBoxContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginTop: 10,
+        paddingRight: 10,
+    },
+    text: {
+        fontSize: 14,
+    },
+    checkbox: {
+        width: 20,
+        height: 20,
+        marginLeft: 10,
     },
     containerTitle: {
         fontSize: 18,

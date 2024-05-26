@@ -6,6 +6,7 @@ import {
   ScrollView,
   StyleSheet,
   TouchableOpacity,
+  Map,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../components/header";
@@ -13,10 +14,19 @@ import SearchBar from "../components/SearchBar";
 import color from "../assets/Colors";
 import MedicCard from "../components/medicCard";
 import { Ionicons } from "@expo/vector-icons";
-
+import AddMedicsModal from "../components/AddMedicsModal";
+import doctors from "../models/doctors";
 
 export default function PersonalAndPatients({ navigation }) {
   const [filterText, setFilterText] = useState('Medicos');
+  const [modalVisible, setModalVisible] = useState(false);
+  const [selectedMedics, setSelectedMedics] = useState([]);
+
+  const handleSelectMedics = (medics) => {
+    setSelectedMedics(medics);
+    setModalVisible(false);
+  };
+
   return (
     <SafeAreaView>
       <Header
@@ -43,41 +53,15 @@ export default function PersonalAndPatients({ navigation }) {
             style={styles.cardsBox}
             showsVerticalScrollIndicator={false}
           >
+          {selectedMedics.map((doctor, index) => (
             <MedicCard
-              name={(filterText == 'Medicos'?'Dr. Gregory House':'Juan Perez')}
-              area={"Medical diagnostic"}
-              mainArea={"infectious diseases and nephrology"}
-            />
-            <MedicCard
-              name={(filterText == 'Medicos'?'Dr. Gregory House':'Juan Perez')}
-              area={"Medical diagnostic"}
-              mainArea={"infectious diseases and nephrology"}
-            />
-            <MedicCard
-              name={(filterText == 'Medicos'?'Dr. Gregory House':'Juan Perez')}
-              area={"Medical diagnostic"}
-              mainArea={"infectious diseases and nephrology"}
-            />
-            <MedicCard
-              name={(filterText == 'Medicos'?'Dr. Gregory House':'Juan Perez')}
-              area={"Medical diagnostic"}
-              mainArea={"infectious diseases and nephrology"}
-            />
-            <MedicCard
-              name={(filterText == 'Medicos'?'Dr. Gregory House':'Juan Perez')}
-              area={"Medical diagnostic"}
-              mainArea={"infectious diseases and nephrology"}
-            />
-            <MedicCard
-              name={(filterText == 'Medicos'?'Dr. Gregory House':'Juan Perez')}
-              area={"Medical diagnostic"}
-              mainArea={"infectious diseases and nephrology"}
-            />
-            <MedicCard
-              name={(filterText == 'Medicos'?'Dr. Gregory House':'Juan Perez')}
-              area={"Medical diagnostic"}
-              mainArea={"infectious diseases and nephrology"}
-            />
+              key={index}
+              name={doctor.name}
+              area={doctor.Department}
+              mainArea={doctor.Specialization}
+              photo={doctor.ProfilePicture}
+              />
+          ))}
             <MedicCard
               name={(filterText == 'Medicos'?'Dr. Gregory House':'Juan Perez')}
               area={"Medical diagnostic"}
@@ -85,12 +69,13 @@ export default function PersonalAndPatients({ navigation }) {
             />
           </ScrollView>
           <View style={styles.buttonBox}>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={()=>setModalVisible(true)}>
               <Text style={styles.buttonText}>Agregar</Text>
             </TouchableOpacity>
           </View>
         </View>
       </View>
+      <AddMedicsModal visible={modalVisible} onClose={handleSelectMedics} medics={doctors}/>
     </SafeAreaView>
   );
 }
