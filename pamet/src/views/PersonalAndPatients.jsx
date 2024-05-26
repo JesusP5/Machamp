@@ -13,10 +13,13 @@ import SearchBar from "../components/SearchBar";
 import color from "../assets/Colors";
 import MedicCard from "../components/medicCard";
 import { Ionicons } from "@expo/vector-icons";
-
+import AddMedicsModal from "../components/AddMedicsModal";
+import doctors from "../models/doctors";
 
 export default function PersonalAndPatients({ navigation }) {
   const [filterText, setFilterText] = useState('Medicos');
+  const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <SafeAreaView>
       <Header
@@ -48,49 +51,15 @@ export default function PersonalAndPatients({ navigation }) {
               area={"Medical diagnostic"}
               mainArea={"infectious diseases and nephrology"}
             />
-            <MedicCard
-              name={(filterText == 'Medicos'?'Dr. Gregory House':'Juan Perez')}
-              area={"Medical diagnostic"}
-              mainArea={"infectious diseases and nephrology"}
-            />
-            <MedicCard
-              name={(filterText == 'Medicos'?'Dr. Gregory House':'Juan Perez')}
-              area={"Medical diagnostic"}
-              mainArea={"infectious diseases and nephrology"}
-            />
-            <MedicCard
-              name={(filterText == 'Medicos'?'Dr. Gregory House':'Juan Perez')}
-              area={"Medical diagnostic"}
-              mainArea={"infectious diseases and nephrology"}
-            />
-            <MedicCard
-              name={(filterText == 'Medicos'?'Dr. Gregory House':'Juan Perez')}
-              area={"Medical diagnostic"}
-              mainArea={"infectious diseases and nephrology"}
-            />
-            <MedicCard
-              name={(filterText == 'Medicos'?'Dr. Gregory House':'Juan Perez')}
-              area={"Medical diagnostic"}
-              mainArea={"infectious diseases and nephrology"}
-            />
-            <MedicCard
-              name={(filterText == 'Medicos'?'Dr. Gregory House':'Juan Perez')}
-              area={"Medical diagnostic"}
-              mainArea={"infectious diseases and nephrology"}
-            />
-            <MedicCard
-              name={(filterText == 'Medicos'?'Dr. Gregory House':'Juan Perez')}
-              area={"Medical diagnostic"}
-              mainArea={"infectious diseases and nephrology"}
-            />
           </ScrollView>
           <View style={styles.buttonBox}>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={()=>setModalVisible(true)}>
               <Text style={styles.buttonText}>Agregar</Text>
             </TouchableOpacity>
           </View>
         </View>
       </View>
+      <AddMedicsModal visible={modalVisible} onClose={() => setModalVisible(false)} medics={doctors}/>
     </SafeAreaView>
   );
 }

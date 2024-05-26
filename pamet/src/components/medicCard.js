@@ -1,13 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import ButtonGenericBlue from './ButtonGenericBlue';
 const defaultImage = require('../assets/img/dr_house2.jpg'); // Asegúrate de cambiar esto a la ruta de tu imagen predeterminada
 
-export default function MedicCard({name, firstName, area, mainArea, photo}) {
+export default function MedicCard({name, area, mainArea, photo}) {
   return (
     <View style={styles.container}>
         <View style={styles.leftContainer}>
-            <Text style={styles.containerTitle}>{firstName} {name}</Text>      
+            <Text style={styles.containerTitle}>{name}</Text>      
             <Text style={styles.containerSubtitle}>{area}</Text>
             <Text style={styles.containerSubtitle}>{mainArea}</Text>
             <TouchableOpacity style={styles.button}>
@@ -15,7 +14,7 @@ export default function MedicCard({name, firstName, area, mainArea, photo}) {
             </TouchableOpacity>
         </View>
         <View style={styles.rightContainer}>
-            <Image source={photo || defaultImage} style={styles.image} />
+            <Image source={photo ? {uri:photo} : defaultImage} style={styles.image} />
         </View>
     </View>
   )
