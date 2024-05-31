@@ -6,7 +6,8 @@ import Header from "../components/header";
 import NavBar from "../components/navbar";
 import { Octicons } from "@expo/vector-icons";
 
-function ScanQRCode({ navigation }) {
+function ScanQRCode({ navigation, route}) {
+  const user = route.params;
   return (
     <SafeAreaView style={styles.safearea}>
       <Header
@@ -31,7 +32,7 @@ function ScanQRCode({ navigation }) {
           </TouchableOpacity>
         </View>
       </View>
-      <NavBar navigation={navigation} style={styles.navBar} />
+      <NavBar navigation={navigation} style={styles.navBar} userData={user}/>
     </SafeAreaView>
   );
 }

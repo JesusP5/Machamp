@@ -4,13 +4,14 @@ import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 
-export default function NavBar({ navigation }) {
+export default function NavBar({ navigation , userData}) {
+  const user = userData;
   return (
     <View style={styles.navbar}>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("PersonaQR")}
+          onPress={() => navigation.navigate("PersonaQR",user)}
         >
           <AntDesign name="qrcode" size={25} color="black" />
         </TouchableOpacity>
@@ -18,7 +19,7 @@ export default function NavBar({ navigation }) {
       <View>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("Patient")}
+          onPress={() => navigation.navigate("Patient",user)}
         >
           <FontAwesome5 name="user" size={25} />
         </TouchableOpacity>
@@ -26,7 +27,7 @@ export default function NavBar({ navigation }) {
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("ScanQRCode")}
+          onPress={() => navigation.navigate("ScanQRCode",user)}
         >
           <Feather name="camera" size={25} />
         </TouchableOpacity>
@@ -35,7 +36,7 @@ export default function NavBar({ navigation }) {
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("PersonalAndPatients")}
+          onPress={() => navigation.navigate("PersonalAndPatients",user)}
         >
           <AntDesign name="edit" size={24} color="black" />
         </TouchableOpacity>

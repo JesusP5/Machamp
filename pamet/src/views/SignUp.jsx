@@ -16,6 +16,7 @@ import color from "../assets/Colors";
 import * as ImagePicker from "expo-image-picker";
 
 
+
 export default function SignUp({ navigation }) {
   const [name, setName] = useState("");
   const [lastName, setLastname] = useState("");

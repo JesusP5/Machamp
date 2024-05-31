@@ -15,10 +15,11 @@ import Header from "../components/header";
 import NavBar from "../components/navbar";
 import PatientCard from "../components/PatientCard";
 
-import usuarios from "../models/usuarios";
 
-function Patient({ navigation }) {
-  const user = usuarios[0];
+
+function Patient({ navigation, route}) {
+  const user = route.params;
+  console.log(user);
   const [patients, setPatients] = useState(user.pacients);
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -170,7 +171,7 @@ function Patient({ navigation }) {
           })}
         </ScrollView>
       </View>
-      <NavBar navigation={navigation} style={styles.navBar} />
+      <NavBar navigation={navigation} style={styles.navBar} userData={user}/>
     </SafeAreaView>
   );
 }
