@@ -15,6 +15,7 @@ import ButtonGenericWhite from "../components/ButtonGenericWhite";
 import color from "../assets/Colors";
 import * as ImagePicker from "expo-image-picker";
 
+
 export default function SignUp({ navigation }) {
   const [name, setName] = useState("");
   const [lastName, setLastname] = useState("");
@@ -53,6 +54,7 @@ export default function SignUp({ navigation }) {
   };
 
   return (
+    
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <SafeAreaView style={styles.container}>
         <Header onBack={() => navigation.goBack()} />

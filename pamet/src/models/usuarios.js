@@ -11,6 +11,7 @@ const usuarios = [
     email: "juanp@pamet.com",
     password: "juan123",
     idInstitution: 1,
+    typeOfUser: 1,// 1 = Doctor no registrado, 2 = Doctor registrado, 3 = Paciente 
     pacients: [pacientes[0], pacientes[1], pacientes[2], pacientes[3]],
   },
   {
@@ -23,6 +24,7 @@ const usuarios = [
     email: "mariaGP@pamet.com",
     password: "maria123",
     idInstitution: 2,
+    typeOfUser: 2,
     pacients: [pacientes[0], pacientes[1], pacientes[2]],
   },
   {
@@ -35,6 +37,7 @@ const usuarios = [
     email: "RickyCG@pamet.com",
     password: "ricky123",
     idInstitution: 1,
+    typeOfUser: 3,
     pacients: [pacientes[1], pacientes[3]],
   },
 ];
