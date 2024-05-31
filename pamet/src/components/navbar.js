@@ -8,22 +8,25 @@ export default function NavBar({ navigation , userData}) {
   const user = userData;
   return (
     <View style={styles.navbar}>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate("PersonaQR",user)}
-        >
-          <AntDesign name="qrcode" size={25} color="black" />
-        </TouchableOpacity>
-      </View>
-      <View>
+       {(user.typeOfUser === "1" || user.typeOfUser === "2" || user.typeOfUser === "3")  && (
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("PersonaQR",user)}
+          >
+            <AntDesign name="qrcode" size={25} color="black" />
+          </TouchableOpacity>
+        </View>
+      )}
+      {(user.typeOfUser === "2" || user.typeOfUser === "3") && (<View>
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate("Patient",user)}
         >
           <FontAwesome5 name="user" size={25} />
         </TouchableOpacity>
-      </View>
+      </View>)}
+      {(user.typeOfUser === "2" || user.typeOfUser === "3") && (
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
@@ -31,8 +34,9 @@ export default function NavBar({ navigation , userData}) {
         >
           <Feather name="camera" size={25} />
         </TouchableOpacity>
-      </View>
+      </View>)}
       {/* boton para pantalla de pruebas */}
+      {(user.typeOfUser === "3") && (
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
@@ -40,7 +44,7 @@ export default function NavBar({ navigation , userData}) {
         >
           <AntDesign name="edit" size={24} color="black" />
         </TouchableOpacity>
-      </View>
+      </View>)}
     </View>
   );
 }

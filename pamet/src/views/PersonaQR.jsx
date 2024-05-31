@@ -8,6 +8,7 @@ import QRCode from 'react-native-qrcode-svg';
 
 function PersonalQR({ navigation, route }) {
   const user = route.params;
+  console.log(user.typeOfUser);
   console.log(user);
   return (
     <SafeAreaView style={styles.safearea}>
@@ -29,7 +30,7 @@ function PersonalQR({ navigation, route }) {
           />
           <Text style={styles.yourOwnQR}>Tu codigo QR</Text>
           <Text style={styles.indicationsText}>
-            Presenta este codigo QR para ser agregado a tu institucion.
+            Presenta este codigo QR para ser agregado a una institucion.
           </Text>
         </View>
       </View>

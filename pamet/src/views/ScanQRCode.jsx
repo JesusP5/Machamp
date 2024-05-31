@@ -12,7 +12,7 @@ function ScanQRCode({ navigation, route}) {
     <SafeAreaView style={styles.safearea}>
       <Header
         onBack={() => navigation.goBack()}
-        onSetting={() => navigation.navigate("EditProfile")}
+        onSetting={() => navigation.navigate("EditProfile",user)}
         isHome={true}
       />
       <View style={styles.container}>
