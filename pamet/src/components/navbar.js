@@ -4,42 +4,47 @@ import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 
-export default function NavBar({ navigation }) {
+export default function NavBar({ navigation , userData}) {
+  const user = userData;
   return (
     <View style={styles.navbar}>
-      <View style={styles.buttonContainer}>
+       {(user.typeOfUser === "1" || user.typeOfUser === "2" || user.typeOfUser === "3")  && (
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("PersonaQR",user)}
+          >
+            <AntDesign name="qrcode" size={25} color="black" />
+          </TouchableOpacity>
+        </View>
+      )}
+      {(user.typeOfUser === "2" || user.typeOfUser === "3") && (<View>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("PersonaQR")}
-        >
-          <AntDesign name="qrcode" size={25} color="black" />
-        </TouchableOpacity>
-      </View>
-      <View>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate("Patient")}
+          onPress={() => navigation.navigate("Patient",user)}
         >
           <FontAwesome5 name="user" size={25} />
         </TouchableOpacity>
-      </View>
+      </View>)}
+      {(user.typeOfUser === "2" || user.typeOfUser === "3") && (
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("ScanQRCode")}
+          onPress={() => navigation.navigate("ScanQRCode",user)}
         >
           <Feather name="camera" size={25} />
         </TouchableOpacity>
-      </View>
+      </View>)}
       {/* boton para pantalla de pruebas */}
+      {(user.typeOfUser === "3") && (
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("PersonalAndPatients")}
+          onPress={() => navigation.navigate("PersonalAndPatients",user)}
         >
           <AntDesign name="edit" size={24} color="black" />
         </TouchableOpacity>
-      </View>
+      </View>)}
     </View>
   );
 }

@@ -17,7 +17,8 @@ import { Ionicons } from "@expo/vector-icons";
 import AddMedicsModal from "../components/AddMedicsModal";
 import doctors from "../models/doctors";
 
-export default function PersonalAndPatients({ navigation }) {
+export default function PersonalAndPatients({ navigation , route}) {
+  const user = route.params;
   const [filterText, setFilterText] = useState('Medicos');
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedMedics, setSelectedMedics] = useState([]);

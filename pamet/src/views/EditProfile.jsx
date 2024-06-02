@@ -6,7 +6,8 @@ import color from "../assets/Colors";
 import GenericInput from "../components/GenericInput";
 import ButtonGenericBlue from "../components/ButtonGenericBlue";
 
-function EditProfile({ navigation }) {
+function EditProfile({ navigation, route }) {
+  const user = route.params;
   const userData = {
     UserName: "Sergio",
     EmailAdress: "sergPR@pamet.com",
@@ -44,21 +45,21 @@ function EditProfile({ navigation }) {
         >
           <View style={styles.generalInfo}>
             <View style={styles.usernameView}>
-              <Text style={styles.UsernameText}>Hi {userData.UserName}!</Text>
+              <Text style={styles.UsernameText}>Hi {user.name}!</Text>
             </View>
             <View style={styles.inputsView}>
               <GenericInput
-                placeholder={userData.EmailAdress}
+                placeholder={user.email}
                 icon="pencil"
                 style={styles.input}
               />
               <GenericInput
-                placeholder={userData.FirstName}
+                placeholder={user.firstName}
                 icon="pencil"
                 style={styles.input}
               />
               <GenericInput
-                placeholder={userData.LastName}
+                placeholder={user.lastName}
                 icon="pencil"
                 style={styles.input}
               />

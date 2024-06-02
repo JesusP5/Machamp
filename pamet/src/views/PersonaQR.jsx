@@ -4,31 +4,37 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import color from "../assets/Colors";
 import Header from "../components/header";
 import Navbar from "../components/navbar";
-import usuarios from "../models/usuarios";
+import QRCode from 'react-native-qrcode-svg'; 
 
-function PersonalQR({ navigation }) {
-  const usuario = usuarios[0];
+function PersonalQR({ navigation, route }) {
+  const user = route.params;
+  console.log(user.typeOfUser);
+  console.log(user);
   return (
     <SafeAreaView style={styles.safearea}>
       <Header
         onBack={() => navigation.goBack()}
-        onSetting={() => navigation.navigate("EditProfile")}
+        onSetting={() => navigation.navigate("EditProfile",user)}
         isHome={true}
       />
       <View style={styles.container}>
         <View style={styles.qrContainer}>
-          <Text style={styles.helloText}> Hola {usuario.name}!</Text>
-          <Image
+          <Text style={styles.helloText}> Hola {user.name}!</Text>
+          {/* <Image
             source={require("../assets/img/EjemploQR.png")}
             style={{ width: 200, height: 200 }}
+          /> */}
+          <QRCode
+            value={user.id.toString()}
+            size={200}
           />
           <Text style={styles.yourOwnQR}>Tu codigo QR</Text>
           <Text style={styles.indicationsText}>
-            Presenta este codigo QR para ser agregado a tu institucion.
+            Presenta este codigo QR para ser agregado a una institucion.
           </Text>
         </View>
       </View>
-      <Navbar navigation={navigation} styles={styles.navBar} />
+      <Navbar navigation={navigation} styles={styles.navBar} userData={user}/>
     </SafeAreaView>
   );
 }
