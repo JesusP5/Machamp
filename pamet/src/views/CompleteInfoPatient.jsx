@@ -17,16 +17,34 @@ function calculateAge(bornDate) {
   let age = today.getFullYear() - birthDate.getFullYear();
   const monthDifference = today.getMonth() - birthDate.getMonth();
 
-  if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
+  if (
+    monthDifference < 0 ||
+    (monthDifference === 0 && today.getDate() < birthDate.getDate())
+  ) {
+    age--;
   }
   return age;
 }
 
 function CompleteInfoPatient({ navigation, route }) {
   const patient = route.params.patient;
+  const asignedDoctor = patient.asignedDoctor;
   const defaultImage = require("../assets/img/UserPicture.png");
-  const { id, name, firstName, lastName, phone, dischargeDate, curp, gender, lastRevision, bornDate, observations, medicines, medicalHistory } = patient;
+  const {
+    id,
+    name,
+    firstName,
+    lastName,
+    phone,
+    dischargeDate,
+    curp,
+    gender,
+    lastRevision,
+    bornDate,
+    observations,
+    medicines,
+    medicalHistory,
+  } = patient;
   return (
     <SafeAreaView>
       <Header
@@ -40,7 +58,9 @@ function CompleteInfoPatient({ navigation, route }) {
       >
         <View style={styles.head} />
         <Image source={defaultImage} style={styles.profile} />
-        <Text style={styles.name}>{firstName} {lastName}, {name}</Text>
+        <Text style={styles.name}>
+          {firstName} {lastName}, {name}
+        </Text>
         <View style={styles.personalBox}>
           <Text style={styles.personalData}>Datos Personales</Text>
           <View style={styles.personalInfo}>
@@ -61,7 +81,7 @@ function CompleteInfoPatient({ navigation, route }) {
                 <Text>Medicamento: {medicine.name}</Text>
                 <Text>Dosis: {medicine.dose}</Text>
               </View>
-              ))}
+            ))}
           </View>
         </View>
         <View style={styles.itineraryBox}>
@@ -97,26 +117,18 @@ function CompleteInfoPatient({ navigation, route }) {
           <Text style={styles.nurseData}>Personal Encargado</Text>
           <ScrollView>
             <View style={styles.nurseInfo}>
-              <View style={styles.nurseCard}>
-                <View style={styles.nurseLeftInfo}>
-                  <Text>Nombre:</Text>
-                  <Text>Edad:</Text>
-                  <Text>Genero:</Text>
+              { asignedDoctor.map((doctor, index) => (
+                <View style={styles.nurseCard}>
+                  <View style={styles.nurseLeftInfo}>
+                    <Text>Nombre:{doctor.name}</Text>
+                    <Text>Departamento:{doctor.Department}</Text>
+                    <Text>Especialización: {doctor.Specialization}</Text>
+                  </View>
+                  <View style={styles.nurseImage}>
+                    <Image source={{uri : doctor.ProfilePicture}} style={styles.nursePic} />
+                  </View>
                 </View>
-                <View style={styles.nurseImage}>
-                  <Image source={defaultImage} style={styles.nursePic} />
-                </View>
-              </View>
-              <View style={styles.nurseCard}>
-                <View style={styles.nurseLeftInfo}>
-                  <Text>Nombre:</Text>
-                  <Text>Edad:</Text>
-                  <Text>Genero:</Text>
-                </View>
-                <View style={styles.nurseImage}>
-                  <Image source={defaultImage} style={styles.nursePic} />
-                </View>
-              </View>
+              ))}
             </View>
           </ScrollView>
         </View>
@@ -268,10 +280,13 @@ const styles = StyleSheet.create({
   },
   nurseImage: {
     flex: 1,
+    justifyContent: "center",
+    alignSelf: "center",
+    alignItems: "center",
   },
   nursePic: {
-    width: 75,
-    height: 75,
+    width: 85,
+    height: 85,
     borderRadius: 15,
     alignSelf: "center",
     marginBottom: 10,

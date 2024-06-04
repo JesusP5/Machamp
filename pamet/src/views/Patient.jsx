@@ -124,7 +124,7 @@ function Patient({ navigation, route}) {
       </Modal>
       <Header
         onBack={() => navigation.goBack()}
-        onSetting={() => navigation.navigate("EditProfile")}
+        onSetting={() => navigation.navigate("EditProfile", user)}
         isHome={true}
       />
       <View style={styles.userContainer}>
@@ -163,8 +163,9 @@ function Patient({ navigation, route}) {
                 BornDate={patient.bornDate}
                 ID={patient.id}
                 Observations={patient.observations}
-                onPress={() =>
+                onPress={() =>{
                   navigation.navigate("CompleteInfoPatient", { patient })
+                }
                 }
               />
             );

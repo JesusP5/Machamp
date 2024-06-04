@@ -20,18 +20,17 @@ function PersonalQR({ navigation, route }) {
       <View style={styles.container}>
         <View style={styles.qrContainer}>
           <Text style={styles.helloText}> Hola {user.name}!</Text>
-          {/* <Image
-            source={require("../assets/img/EjemploQR.png")}
-            style={{ width: 200, height: 200 }}
-          /> */}
+  
           <QRCode
             value={user.id.toString()}
             size={200}
           />
           <Text style={styles.yourOwnQR}>Tu codigo QR</Text>
           <Text style={styles.indicationsText}>
-            Presenta este codigo QR para ser agregado a una institucion.
-          </Text>
+            { (user.typeOfUser === "1" | user.typeOfUser === "2")?
+            "Presenta este codigo QR para ser agregado a una institucion."
+            :"Presenta este codigo QR para identificarte."}
+            </Text>
         </View>
       </View>
       <Navbar navigation={navigation} styles={styles.navBar} userData={user}/>
