@@ -1,3 +1,4 @@
+import patients from "./pacientes";
 const doctors = [
 {
     "name": "Dr. John Smith",
@@ -6,7 +7,7 @@ const doctors = [
     "ID": "123456",
     "Specialization": "Cardiology",
     "Department": "Internal Medicine",
-    "ProfilePicture": "https://randomuser.me/api/portraits/men/1.jpg"
+    "ProfilePicture": "https://randomuser.me/api/portraits/men/1.jpg",
 },
 {
     "name": "Dr. Emily Johnson",

@@ -1,4 +1,4 @@
-import pacientes from "./pacientes.js";
+import pacientes from "./pacientes";
 // 1 = Doctor no registrado, 2 = Doctor registrado, 3 = supervisor
 const usuarios = [
   {
