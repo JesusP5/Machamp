@@ -1,50 +1,110 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { useRoute } from "@react-navigation/native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
+import Colors from "../assets/Colors";
 
-export default function NavBar({ navigation , userData}) {
+export default function NavBar({ navigation, userData }) {
   const user = userData;
+  const route = useRoute();
+  const currentScreen = route.name;
   return (
     <View style={styles.navbar}>
-       {(user.typeOfUser === "1" || user.typeOfUser === "2" || user.typeOfUser === "3")  && (
+      {(user.typeOfUser === "1" || user.typeOfUser === "2") && (
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => navigation.navigate("PersonaQR",user)}
+            onPress={() => navigation.navigate("PersonaQR", user)}
           >
-            <AntDesign name="qrcode" size={25} color="black" />
+            <AntDesign
+              name="qrcode"
+              size={25}
+              color={currentScreen === "PersonaQR" ? Colors.primary : "black"}
+            />
           </TouchableOpacity>
         </View>
       )}
-      {(user.typeOfUser === "2" || user.typeOfUser === "3") && (<View>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate("Patient",user)}
-        >
-          <FontAwesome5 name="user" size={25} />
-        </TouchableOpacity>
-      </View>)}
+      {user.typeOfUser === "3" && (
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("ScanDocQRCode", user)}
+          >
+            <Feather
+              name="camera"
+              size={25}
+              color={
+                currentScreen === "ScanDocQRCode" ? Colors.primary : "black"
+              }
+            />
+          </TouchableOpacity>
+        </View>
+      )}
+      {user.typeOfUser === "3" && (
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("ScanDocQRCode", user)}
+          >
+            <Feather
+              name="home"
+              size={25}
+              color={
+                currentScreen === "ScanDocQRCode" ? Colors.primary : "black"
+              }
+            />
+          </TouchableOpacity>
+        </View>
+      )}
+      {user.typeOfUser === "2" && (
+        <View>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("Patient", user)}
+          >
+            <FontAwesome5
+              name="user"
+              size={25}
+              color={currentScreen === "Patient" ? Colors.primary : "black"}
+            />
+          </TouchableOpacity>
+        </View>
+      )}
       {(user.typeOfUser === "2" || user.typeOfUser === "3") && (
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate("ScanQRCode",user)}
-        >
-          <Feather name="camera" size={25} />
-        </TouchableOpacity>
-      </View>)}
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("ScanQRCode", user)}
+          >
+            <Feather
+              name="camera"
+              size={25}
+              color={currentScreen === "ScanQRCode" ? Colors.primary : "black"}
+            />
+          </TouchableOpacity>
+        </View>
+      )}
       {/* boton para pantalla de pruebas */}
-      {(user.typeOfUser === "3") && (
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate("PersonalAndPatients",user)}
-        >
-          <AntDesign name="edit" size={24} color="black" />
-        </TouchableOpacity>
-      </View>)}
+      {user.typeOfUser === "3" && (
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("PersonalAndPatients", user)}
+          >
+            <AntDesign
+              name="edit"
+              size={24}
+              color={
+                currentScreen === "PersonalAndPatients"
+                  ? Colors.primary
+                  : "black"
+              }
+            />
+          </TouchableOpacity>
+        </View>
+      )}
     </View>
   );
 }

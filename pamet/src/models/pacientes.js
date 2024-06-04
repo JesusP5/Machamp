@@ -1,6 +1,8 @@
+import doctors from "./doctors";
+
 const pacientes = [
   {
-    id: 1,
+    id: 14356,
     name: "Alan",
     firstName: "Olvera",
     lastName: "Cristino",
@@ -41,9 +43,10 @@ const pacientes = [
         treatment: "Descanso",
       },
     ],
+    asignedDoctor:  [doctors[0], doctors[1], doctors[2]],
   },
   {
-    id: 2,
+    id: 23675,
     name: "Brenda",
     firstName: "Martínez",
     lastName: "Gómez",
@@ -84,9 +87,10 @@ const pacientes = [
         treatment: "Ninguno",
       },
     ],
+    asignedDoctor:  [doctors[1], doctors[3], doctors[4]],
   },
   {
-    id: 3,
+    id: 33356,
     name: "Carlos",
     firstName: "Hernández",
     lastName: "López",
@@ -127,9 +131,10 @@ const pacientes = [
         treatment: "Seguimiento",
       },
     ],
+    asignedDoctor:  [doctors[5], doctors[2], doctors[7]],
   },
   {
-    id: 4,
+    id: 41465,
     name: "Diana",
     firstName: "Pérez",
     lastName: "Sánchez",
@@ -170,6 +175,7 @@ const pacientes = [
         treatment: "Seguimiento",
       },
     ],
+    asignedDoctor:  [doctors[8], doctors[1], doctors[5]],
   },
 ];
 

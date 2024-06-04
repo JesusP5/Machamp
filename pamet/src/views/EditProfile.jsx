@@ -36,7 +36,7 @@ function EditProfile({ navigation, route }) {
       />
       <View style={styles.container}>
         <View style={styles.formHeader}>
-          <Text style={styles.formTitle}>My personal info</Text>
+          <Text style={styles.formTitle}>Informacion Personal</Text>
           <ShadowLine />
         </View>
         <ScrollView
@@ -45,7 +45,7 @@ function EditProfile({ navigation, route }) {
         >
           <View style={styles.generalInfo}>
             <View style={styles.usernameView}>
-              <Text style={styles.UsernameText}>Hi {user.name}!</Text>
+              <Text style={styles.UsernameText}>Hola {user.name}!</Text>
             </View>
             <View style={styles.inputsView}>
               <GenericInput
@@ -67,49 +67,49 @@ function EditProfile({ navigation, route }) {
           </View>
           <View style={styles.changePasswordSection}>
             <View style={styles.changePasswordView}>
-              <Text style={styles.titleText}>Change your password</Text>
+              <Text style={styles.titleText}>Cambiar contraseña</Text>
             </View>
             <View style={styles.changePasswordForm}>
               <GenericInput
-                placeholder="Current password"
+                placeholder="Contraseña actual"
                 icon="lock"
                 style={styles.input}
               />
               <View style={styles.passwordRestrictionsContainer}>
                 <Text style={styles.restrictionTitle}>
-                  Please enter a password that meets the following criteria:
+                  La contraseña debe cumplir los siguientes requisitos:
                 </Text>
                 <View style={styles.passwordRestrictions}>
                   <Text style={styles.passwordRestrictionsText}>
-                    • At least 8 characters
+                    • Al menos 8 caracteres
                   </Text>
                   <Text style={styles.passwordRestrictionsText}>
-                    • At least 1 number
+                    • Al menos 1 número
                   </Text>
                   <Text style={styles.passwordRestrictionsText}>
-                    • At least 1 special character
+                    • Al menos 1 caracter especial
                   </Text>
                   <Text style={styles.passwordRestrictionsText}>
-                    • At least 1 uppercase letter
+                    • Al menos 1 mayúscula
                   </Text>
                   <Text style={styles.passwordRestrictionsText}>
-                    • At least 1 lowercase letter
+                    • Al menos 1 minúscula
                   </Text>
                 </View>
               </View>
               <GenericInput
-                placeholder="New Password"
+                placeholder="Contraeña nueva"
                 icon="lock"
                 style={styles.input}
               />
               <GenericInput
-                placeholder="Confirm Password"
+                placeholder="Confirmar contraseña"
                 icon="lock"
                 style={styles.input}
               />
             </View>
             <ButtonGenericBlue
-              title="Change password"
+              title="Cambiar contraseña"
               backgroundColor={"blue"}
             />
           </View>

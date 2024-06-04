@@ -34,7 +34,7 @@ const usuarios = [
     name: "Ricardo",
     firstName: "Cortes",
     lastName: "Gonzalez",
-    email: "RickyCG@pamet.com",
+    email: "ricky@pamet.com",
     password: "ricky123",
     idInstitution: 1,
     typeOfUser: "3",

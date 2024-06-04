@@ -38,7 +38,11 @@ function Login({ navigation, route }) {
     if (user) {
       if (user.password === password) {
         console.log("Bienvenido");
+        if (user.typeOfUser === "3") {
+          navigation.navigate("ScanDocQRCode", user);
+        } else{
         navigation.navigate("PersonaQR", user);
+        }
       } else {
         console.log("Contraseña incorrecta");
         setError(true);

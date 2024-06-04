@@ -8,7 +8,7 @@ import NavBar from "../components/navbar";
 import { Octicons } from "@expo/vector-icons";
 import pacientes from "../models/pacientes";
 
-function ScanQRCode({ navigation, route }) {
+export default function ScanDocQRCode({ navigation, route }) {
   const user = route.params;
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
@@ -149,4 +149,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ScanQRCode;
+

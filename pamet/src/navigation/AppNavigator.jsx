@@ -11,6 +11,7 @@ import PersonaQR from "../views/PersonaQR";
 import CompleteInfoPatient from "../views/CompleteInfoPatient";
 import MedicScreen from "../views/MedicScreen";
 import PersonalAndPatients from "../views/PersonalAndPatients";
+import ScanDocQRCode from "../views/ScanDocQrCode"
 const Stack = createNativeStackNavigator();
 
 function AppNavigator() {
@@ -37,6 +38,8 @@ function AppNavigator() {
         name="PersonalAndPatients"
         component={PersonalAndPatients}
       />
+      <Stack.Screen name="ScanDocQRCode" component={ScanDocQRCode} />
+
     </Stack.Navigator>
   );
 }
