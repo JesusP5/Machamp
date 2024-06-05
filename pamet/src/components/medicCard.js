@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
-const defaultImage = require('../assets/img/dr_house2.jpg'); // Asegúrate de cambiar esto a la ruta de tu imagen predeterminada
+const defaultImage = require('../assets/img/UserPicture.png'); // Asegúrate de cambiar esto a la ruta de tu imagen predeterminada
 import {Checkbox} from 'expo-checkbox';
 
 export default function MedicCard({name, area, mainArea, photo, onSelect, isSelected, showCheckbox = false, onPress}) {

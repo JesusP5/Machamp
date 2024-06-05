@@ -11,22 +11,15 @@ import pacientes from "../models/pacientes";
 export default function ScanDocQRCode({ navigation, route }) {
   const user = route.params;
   const [hasPermission, setHasPermission] = useState(null);
-  const [scanned, setScanned] = useState(false);
   const [isScannerActive, setIsScannerActive] = useState(false);
 
   const handleBarCodeScanned = ({ type, data }) => {
     setIsScannerActive(false);
-    const patient = findPatient(parseInt(data));
-    if (patient) {
       alert(`Paciente con id: ${data} encontrado!`);
-      navigation.navigate("CompleteInfoPatient", { patient });
-    } else {
-      alert("Paciente no encontrado");
-    }
+      user= data
+      navigation.navigate("AddMedic",user);
   };
-  const findPatient = (id) => {
-    return pacientes.find((patient) => patient.id === id);
-  }
+ 
 
   useEffect(() => {
     (async () => {

@@ -14,7 +14,7 @@ export default function AddMedicsModal({visible, onClose, medics}) {
         });
     };
     const handleAddMedics = () => {
-        console.log(selectedMedics.length + ' medicos agregados');
+        
         onClose(selectedMedics);
         setSelectedMedics([]);
     }
@@ -50,10 +50,10 @@ export default function AddMedicsModal({visible, onClose, medics}) {
                                 showCheckbox={true}
                             />
                         ))}
-                        <TouchableOpacity style={styles.addDoctorButton} onPress={handleAddMedics}>
+                    </ScrollView>
+                    <TouchableOpacity style={styles.addDoctorButton} onPress={handleAddMedics}>
                             <Text style={styles.buttonText}>Agregar</Text>
                         </TouchableOpacity>
-                    </ScrollView>
                 </View>
             </View>
         </Modal>

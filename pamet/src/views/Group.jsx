@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   Text,
   StyleSheet,
@@ -13,22 +13,30 @@ import color from "../assets/Colors";
 import Header from "../components/header";
 import MedicCard from "../components/medicCard";
 import pacientes from "../models/pacientes";
+import AddMedicsModal from "../components/AddMedicsModal";
+import doctors from "../models/doctors";
 
-
-export default function Group({ navigation, route}) {
+export default function Group({ navigation, route }) {
   const { user, group } = route.params;
-    const handlePatient = (doctor) => {
-        const user ={
-            profileImage: doctor.ProfilePicture,
-            name: doctor.name,
-            firstName: " ",
-            lastName: " ",
-            id: doctor.id,
-            pacients:[pacientes[0],pacientes[2],pacientes[1]]
-        }
-        navigation.navigate("Patient",user);
-    }
-  console.log(group);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [selectedMedics, setSelectedMedics] = useState([]);
+
+  const handleSelectMedics = (medics) => {
+    setSelectedMedics(medics);
+    setModalVisible(false);
+  };
+  const handlePatient = (doctor) => {
+    const user = {
+      profileImage: doctor.ProfilePicture,
+      name: doctor.name,
+      firstName: " ",
+      lastName: " ",
+      id: doctor.id,
+      pacients: [pacientes[0], pacientes[2], pacientes[1]],
+    };
+    navigation.navigate("Patient", user);
+  };
+
   return (
     <SafeAreaView style={styles.safearea}>
       <Header
@@ -40,26 +48,35 @@ export default function Group({ navigation, route}) {
         <View style={styles.qrContainer}>
           <Text style={styles.helloText}> Centro medico UAQ</Text>
           <Image
-              source={require("../assets/img/UAQ.png")}
-              style={{ width: 125, height: 125, marginTop: 20}}
-              resizeMode="contain"
-              
-            />
-            <ScrollView>
+            source={require("../assets/img/UAQ.png")}
+            style={{ width: 125, height: 125, marginTop: 20 }}
+            resizeMode="contain"
+          />
+          <ScrollView>
             {group.doctorInGroup.map((doctor, index) => (
-            <MedicCard
-              key={index}
-              name={doctor.name}
-              area={doctor.Department}
-              mainArea={doctor.Specialization}
-              photo={doctor.ProfilePicture}
-                onPress={()=>{handlePatient(doctor)}}
+              <MedicCard
+                key={index}
+                name={doctor.name}
+                area={doctor.Department}
+                mainArea={doctor.Specialization}
+                photo={doctor.ProfilePicture}
+                onPress={() => {
+                  handlePatient(doctor);
+                }}
               />
-          ))}
-</ScrollView>
+            ))}
+          </ScrollView>
+          <View style={styles.buttonBox}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => setModalVisible(true)}
+            >
+              <Text style={styles.buttonText}>Agregar</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
-     
+      <AddMedicsModal visible={modalVisible} onClose={handleSelectMedics} medics={doctors}/>
     </SafeAreaView>
   );
 }
@@ -69,6 +86,22 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: color.white,
   },
+  buttonBox: {
+    alignItems: "flex-end",
+    padding: 20,
+  },
+  button: {
+    backgroundColor: color.primary,
+    padding: 10,
+    borderRadius: 50,
+    width: 160,
+  },
+  buttonText: {
+    color: "white",
+    textAlign: "center",
+    fontSize: 16,
+    fontWeight: "semibold",
+  },
   container: {
     flex: 1,
     backgroundColor: color.white,
@@ -77,17 +110,17 @@ const styles = StyleSheet.create({
   },
   groupContain: {
     marginTop: 20,
-    marginHorizontal:20,
+    marginHorizontal: 20,
     flexDirection: "row",
   },
-  leftButton:{
+  leftButton: {
     alignItems: "center",
     justifyContent: "center",
     borderColor: color.black,
     borderWidth: 1,
     borderRightWidth: 0,
-    borderTopLeftRadius:25,
-    borderBottomLeftRadius:25,
+    borderTopLeftRadius: 25,
+    borderBottomLeftRadius: 25,
     padding: 15,
     width: "65%",
     height: 70,
@@ -103,16 +136,15 @@ const styles = StyleSheet.create({
     borderColor: "white",
     borderWidth: 1,
     padding: 20,
-    
   },
-  rightButton:{
+  rightButton: {
     alignItems: "center",
     justifyContent: "center",
     borderColor: color.primary,
     backgroundColor: color.primary,
     borderWidth: 1,
-    borderTopRightRadius:25,
-    borderBottomRightRadius:25,
+    borderTopRightRadius: 25,
+    borderBottomRightRadius: 25,
     width: "30%",
     height: 70,
     shadowColor: "#000",

@@ -33,29 +33,29 @@ function Login({ navigation, route }) {
   };
 
   const findUser = () => {
-    console.log(email, password);
+   
     const user = users.find((user) => user.email === email);
     if (user) {
       if (user.password === password) {
-        console.log("Bienvenido");
+        
         if (user.typeOfUser === "3") {
           navigation.navigate("ScanDocQRCode", user);
         } else{
         navigation.navigate("PersonaQR", user);
         }
       } else {
-        console.log("Contraseña incorrecta");
+        
         setError(true);
       }
     } else {
-      console.log("Usuario no encontrado");
+      
       setError(true);
     }
   };
 
   const handlePress = () => {
     findUser();
-    // console.log("Bien");
+   
     // navigation.navigate("PersonaQR");
   };
   const SignUp = () => {
