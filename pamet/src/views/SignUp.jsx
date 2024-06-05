@@ -47,7 +47,7 @@ export default function SignUp({ navigation }) {
       quality: 1,
     });
 
-    console.log(result);
+
 
     if (!result.cancelled) {
       setImageSource({ uri: result.assets[0].uri });

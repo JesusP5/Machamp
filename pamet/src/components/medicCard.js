@@ -1,16 +1,16 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
-const defaultImage = require('../assets/img/dr_house2.jpg'); // Asegúrate de cambiar esto a la ruta de tu imagen predeterminada
+const defaultImage = require('../assets/img/UserPicture.png'); // Asegúrate de cambiar esto a la ruta de tu imagen predeterminada
 import {Checkbox} from 'expo-checkbox';
 
-export default function MedicCard({name, area, mainArea, photo, onSelect, isSelected, showCheckbox = false}) {
+export default function MedicCard({name, area, mainArea, photo, onSelect, isSelected, showCheckbox = false, onPress}) {
   return (
     <View style={styles.container}>
         <View style={styles.leftContainer}>
             <Text style={styles.containerTitle}>{name}</Text>      
             <Text style={styles.containerSubtitle}>{area}</Text>
             <Text style={styles.containerSubtitle}>{mainArea}</Text>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={onPress}>
                 <Text style={styles.buttonText}>Ver perfil</Text>
             </TouchableOpacity>
         </View>
@@ -43,17 +43,7 @@ const styles = StyleSheet.create({
         paddingRight: 0,
         justifyContent: 'space-between',
         alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 5,
-        },
-        shadowOpacity: 0.34,
-        shadowRadius: 6.27,
-        elevation: 5,
-        borderColor: 'gray',
-        borderWidth: 0,
-        marginHorizontal:0,
+        
     },
     button: {
         backgroundColor: '#008EDA',

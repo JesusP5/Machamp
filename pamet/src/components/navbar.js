@@ -46,13 +46,13 @@ export default function NavBar({ navigation, userData }) {
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => navigation.navigate("ScanDocQRCode", user)}
+            onPress={() => navigation.navigate("AdminGroups", user)}
           >
             <Feather
               name="home"
               size={25}
               color={
-                currentScreen === "ScanDocQRCode" ? Colors.primary : "black"
+                currentScreen === "AdminGroups" ? Colors.primary : "black"
               }
             />
           </TouchableOpacity>
@@ -72,7 +72,7 @@ export default function NavBar({ navigation, userData }) {
           </TouchableOpacity>
         </View>
       )}
-      {(user.typeOfUser === "2" || user.typeOfUser === "3") && (
+      {(user.typeOfUser === "2" ) && (
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.button}

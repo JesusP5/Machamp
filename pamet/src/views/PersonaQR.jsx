@@ -8,8 +8,7 @@ import QRCode from 'react-native-qrcode-svg';
 
 function PersonalQR({ navigation, route }) {
   const user = route.params;
-  console.log(user.typeOfUser);
-  console.log(user);
+
   return (
     <SafeAreaView style={styles.safearea}>
       <Header

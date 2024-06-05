@@ -12,6 +12,9 @@ import CompleteInfoPatient from "../views/CompleteInfoPatient";
 import MedicScreen from "../views/MedicScreen";
 import PersonalAndPatients from "../views/PersonalAndPatients";
 import ScanDocQRCode from "../views/ScanDocQrCode"
+import AdminGroups from "../views/AdminGroups";
+import Group from "../views/Group";
+import AddMedic from "../views/AddMedic";
 const Stack = createNativeStackNavigator();
 
 function AppNavigator() {
@@ -39,7 +42,9 @@ function AppNavigator() {
         component={PersonalAndPatients}
       />
       <Stack.Screen name="ScanDocQRCode" component={ScanDocQRCode} />
-
+      <Stack.Screen name="AdminGroups" component={AdminGroups} />
+      <Stack.Screen name="Group" component={Group} />
+      <Stack.Screen name="AddMedic" component={AddMedic} />
     </Stack.Navigator>
   );
 }

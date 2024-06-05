@@ -19,10 +19,10 @@ import PatientCard from "../components/PatientCard";
 
 function Patient({ navigation, route}) {
   const user = route.params;
-  console.log(user);
+  
+ 
   const [patients, setPatients] = useState(user.pacients);
   const [modalVisible, setModalVisible] = useState(false);
-
   const sortPatients = (criteria) => {
     let sortedPatients = [...patients];
     switch (criteria) {
